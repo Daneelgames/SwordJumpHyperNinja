@@ -5,7 +5,7 @@ using UnityEngine;
 public class Destructible : MonoBehaviour
 {
 
-    public HorizontalBoundsMovement _HBM;
+    public LinearBoundsMovement _LBM;
     public GameObject deathParticles;
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -15,7 +15,7 @@ public class Destructible : MonoBehaviour
             {
                 Instantiate(deathParticles, transform.position, transform.rotation);
             }
-            _HBM.DestroyBounds();
+            _LBM.DestroyBounds();
             Destroy(gameObject);
         }
     }

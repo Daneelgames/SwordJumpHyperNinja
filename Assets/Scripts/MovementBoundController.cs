@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MovementBoundController : MonoBehaviour
 {
-    HorizontalBoundsMovement master;
+    LinearBoundsMovement master;
 
-    public void SetMaster(HorizontalBoundsMovement _master)
+    public void SetMaster(LinearBoundsMovement _master)
     {
         master = _master;
 		transform.SetParent(null);

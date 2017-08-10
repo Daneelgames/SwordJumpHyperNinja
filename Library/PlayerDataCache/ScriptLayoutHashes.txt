@@ -90,6 +90,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+2aa2c78b819dd1385d5a25c4095dbba2 Assembly-CSharp.dll:.LinearBoundsMovement
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -112,7 +113,9 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 1668e22c70708e0ce7e8ba4f906cc0c4 Assembly-CSharp.dll:.SpearConeController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HazardController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GoalController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LevelParameters
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MovementBoundController
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -137,3 +140,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 fcc4e97d2b50148ea8561442bafc27fe Assembly-CSharp.dll:.PlayerController
 2b772561240509cbe31d7cefa9974633 Assembly-CSharp.dll:.SpearController
+115b655e790b721bce031e2ab8d3258d Assembly-CSharp.dll:.Destructible

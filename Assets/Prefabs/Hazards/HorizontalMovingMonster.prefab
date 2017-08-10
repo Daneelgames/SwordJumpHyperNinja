@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23794731506946492}
   - component: {fileID: 61718624913697880}
   - component: {fileID: 114609915374764246}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: boundLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23820067338467622}
   - component: {fileID: 61303273221537810}
   - component: {fileID: 114385379041863700}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: boundRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,5 +384,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83265e0ed401b4742b0612091fa80982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HBM: {fileID: 114387956022560436}
+  _LBM: {fileID: 114387956022560436}
   deathParticles: {fileID: 0}

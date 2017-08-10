@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (!grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal")/7f, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal")/8.5f, rb.velocity.y);
         }
         var newVel = rb.velocity;
 
