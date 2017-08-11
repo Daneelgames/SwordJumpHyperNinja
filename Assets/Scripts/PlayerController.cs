@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     float hSpeed;
 
 
+    void Awake()
+    {
+        GameManager.instance.SetPlayer(this);
+    }
+
     void Update()
     {
         GetInput();
@@ -60,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (!grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal")/8.5f, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
         }
         var newVel = rb.velocity;
 
@@ -127,7 +132,7 @@ public class PlayerController : MonoBehaviour
         slash.transform.SetParent(spearController.gameObject.transform);
         slash.transform.localPosition = new Vector2(0.5f, 0);
         slash.transform.localEulerAngles = new Vector3(0, 0, 270);
-        slash.transform.SetParent(transform);
+        slash.transform.SetParent(null);
         swordBackSprite.SetActive(false);
         attacking = true;
         yield return new WaitForSeconds(0.25f);

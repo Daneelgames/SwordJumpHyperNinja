@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public PlayerController pc;
+    public CameraMovement activeCam;
 
     void Awake()
     {
@@ -21,10 +23,20 @@ public class GameManager : MonoBehaviour
     public void FinishLevel()
     {
         //temp
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void SetPlayer(PlayerController _pc)
+    {
+        pc = _pc;
+    }
+    public void SetActiveCamera(CameraMovement cam)
+    {
+        activeCam = cam;
+    }
+
 }

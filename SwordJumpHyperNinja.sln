@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwordJumpHyperNinja", "SwordJumpHyperNinja.csproj", "{2AD09F66-2F1B-096C-B25B-71CF76F2C801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwordJumpHyperNinja.Editor", "SwordJumpHyperNinja.Editor.csproj", "{5305F177-F51B-107C-4402-C45DBDB3E279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AD09F66-2F1B-096C-B25B-71CF76F2C801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD09F66-2F1B-096C-B25B-71CF76F2C801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD09F66-2F1B-096C-B25B-71CF76F2C801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD09F66-2F1B-096C-B25B-71CF76F2C801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5305F177-F51B-107C-4402-C45DBDB3E279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5305F177-F51B-107C-4402-C45DBDB3E279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5305F177-F51B-107C-4402-C45DBDB3E279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5305F177-F51B-107C-4402-C45DBDB3E279}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

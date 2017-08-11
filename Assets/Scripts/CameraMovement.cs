@@ -15,8 +15,8 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        GameManager.instance.SetActiveCamera(this);
     }
-
     void LateUpdate()
     {
         float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
