@@ -9,7 +9,8 @@ public class HazardController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.layer == 9)
         {
-            GameManager.instance.RestartLevel();
+            if (!GameManager.instance.pc.dead)
+                GameManager.instance.RestartLevel();
         }
     }
 }

@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 4dce1578137fc3b4081d3b3b1611855e
-timeCreated: 1502381470
+timeCreated: 1502653638
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: houses_1_0
+    21300002: fireplace
+    21300004: fire_1
+    21300006: fire_2
+    21300008: fire_3
+    21300010: tent
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -117,6 +122,76 @@ TextureImporter:
         height: 871
       alignment: 9
       pivot: {x: 0.54273784, y: 0.29045138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireplace
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 1435
+        width: 381
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_1
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 1678
+        width: 312
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_2
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 1742
+        width: 151
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire_3
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1780
+        width: 69
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tent
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 228
+        width: 1505
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
