@@ -14,8 +14,12 @@ public class PlayerController : MonoBehaviour
     int lookDirection = 1;
     public SpearController spearController;
     public GameObject swordBackSprite;
+    public GameObject bloodParticles;
+    public GameObject bloodSplatter;
     public LayerMask solidMask;
+    public List<GameObject> bodyParts = new List<GameObject>();
     bool attacking = false;
+    bool dead = false;
     float vSpeed = 0;
     float hSpeed;
 
@@ -59,52 +63,71 @@ public class PlayerController : MonoBehaviour
     }
     void ApplyForces()
     {
-        if (grounded && !attacking)
+        if (!dead)
         {
-            rb.velocity = new Vector2(hSpeed * speed, rb.velocity.y);
+            if (grounded && !attacking)
+            {
+                rb.velocity = new Vector2(hSpeed * speed, rb.velocity.y);
+            }
+            else if (!grounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
+            }
+            var newVel = rb.velocity;
+
+            if (newVel.y > 7)
+                newVel.y = 7;
+            else if (newVel.y < -15)
+                newVel.y = -15;
+
+            if (newVel.x > 7)
+                newVel.x = 7;
+            else if (newVel.x < -7)
+                newVel.x = -7;
+
+            rb.velocity = newVel;
         }
-        else if (!grounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
-        }
-        var newVel = rb.velocity;
-
-        if (newVel.y > 7)
-            newVel.y = 7;
-        else if (newVel.y < -15)
-            newVel.y = -15;
-
-        if (newVel.x > 7)
-            newVel.x = 7;
-        else if (newVel.x < -7)
-            newVel.x = -7;
-
-        rb.velocity = newVel;
+        else
+            rb.velocity = Vector2.zero;
     }
 
     void Animate()
     {
-        if (grounded)
+        if (!dead)
         {
-            anim.SetBool("Jump", false);
-            if (rb.velocity != Vector2.zero)
-                anim.SetBool("Move", true);
+            if (grounded)
+            {
+                anim.SetBool("Jump", false);
+                if (rb.velocity != Vector2.zero)
+                    anim.SetBool("Move", true);
+                else
+                    anim.SetBool("Move", false);
+            }
             else
+            {
+                anim.SetBool("Jump", true);
                 anim.SetBool("Move", false);
+            }
+            if (rb.velocity.x > 0)
+            {
+                spriteHolder.transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (rb.velocity.x < 0)
+            {
+                spriteHolder.transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
-        else
+    }
+
+    public void Dead()
+    {
+        dead = true;
+        foreach(GameObject c in bodyParts)
         {
-            anim.SetBool("Jump", true);
-            anim.SetBool("Move", false);
+            GameObject part = Instantiate(c, transform.position, Quaternion.Euler(0,0,Random.Range(0,360)));
         }
-        if (rb.velocity.x > 0)
-        {
-            spriteHolder.transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (rb.velocity.x < 0)
-        {
-            spriteHolder.transform.localScale = new Vector3(-1, 1, 1);
-        }
+        anim.gameObject.SetActive(false);
+        spearController.gameObject.SetActive(false);
     }
 
     void CheckGround()

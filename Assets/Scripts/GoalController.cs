@@ -13,7 +13,7 @@ public class GoalController : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Spear")
         {
@@ -25,7 +25,7 @@ public class GoalController : MonoBehaviour
     {
         bloodHolder.EmitBlood();
         anim.SetTrigger("Dead");
-        Instantiate(bloodSplatter, transform.position, Quaternion.identity);
+        Instantiate(bloodSplatter, transform.position, Quaternion.Euler(0,0,Random.Range(0,360)));
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(3f);
         Time.timeScale = 1f;

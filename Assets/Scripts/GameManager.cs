@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public PlayerController pc;
     public CameraMovement activeCam;
+    List<GameObject> bloodSplatters = new List<GameObject>();
 
     void Awake()
     {
@@ -23,10 +24,27 @@ public class GameManager : MonoBehaviour
     public void FinishLevel()
     {
         //temp
+        foreach (GameObject c in bloodSplatters)
+        {
+            Destroy(c);
+        }
+        bloodSplatters.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void RestartLevel()
     {
+        GameObject blood = Instantiate(pc.bloodSplatter, pc.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360))) as GameObject;
+        GameObject blood2 = Instantiate(pc.bloodParticles, pc.transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360))) as GameObject;
+        DontDestroyOnLoad(blood);
+        DontDestroyOnLoad(blood2);
+        bloodSplatters.Add(blood);
+        StartCoroutine("PlayerDead");
+    }
+
+    IEnumerator PlayerDead()
+    {
+        pc.Dead();
+        yield return new WaitForSecondsRealtime(0.25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

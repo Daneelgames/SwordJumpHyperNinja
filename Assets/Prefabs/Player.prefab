@@ -256,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750476051638668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.26, y: -3.96, z: 0}
+  m_LocalPosition: {x: -8.58, y: 2.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4471279926243720}
@@ -584,9 +584,17 @@ MonoBehaviour:
   grounded: 1
   spearController: {fileID: 114808534758060982}
   swordBackSprite: {fileID: 1727337131849370}
+  bloodParticles: {fileID: 1527482565731888, guid: a60306c78e1ec4447be46b7ffdb86a88,
+    type: 2}
+  bloodSplatter: {fileID: 136784, guid: 273acd9f54f187a48a419d6b81376337, type: 2}
   solidMask:
     serializedVersion: 2
     m_Bits: 256
+  bodyParts:
+  - {fileID: 1242417500749750, guid: ac08a9863e8fdee459f18752e7eeab62, type: 2}
+  - {fileID: 1088676146659670, guid: 03f84def689fa324b808322ea33538e3, type: 2}
+  - {fileID: 1088676146659670, guid: 1282c2b8377c62d4a9e14c3f42ee65da, type: 2}
+  - {fileID: 1192305062196124, guid: f633ad7deae92dc4099d928e6edaf1e3, type: 2}
 --- !u!212 &212225435543697274
 SpriteRenderer:
   m_ObjectHideFlags: 1
