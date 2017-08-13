@@ -20,13 +20,17 @@ public class SpearConeController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        Bounce(other);
+        Bounce(other.gameObject);
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Bounce(other.gameObject);
     }
     void OnCollisionStay2D(Collision2D other)
     {
         if (canStay && cooldown <= 0)
         {
-            Bounce(other);
+            Bounce(other.gameObject);
             canStay = false;
         }
     }
@@ -37,9 +41,10 @@ public class SpearConeController : MonoBehaviour
             canStay = true;
         }
     }
-    void Bounce(Collision2D other)
+    void Bounce(GameObject other)
     {
-        if (other.gameObject.layer == 8 || other.gameObject.layer == 11)
+        //print("bounce");
+        if (other.layer == 8 || other.layer == 11)
         {
             cooldown = maxCooldown;
             Vector3 bouncePos = pc.spearController.spearTarget.transform.position;

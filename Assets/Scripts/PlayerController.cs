@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask solidMask;
     public List<GameObject> bodyParts = new List<GameObject>();
     bool attacking = false;
-    bool dead = false;
+    public bool dead = false;
     float vSpeed = 0;
     float hSpeed;
 
@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         GameManager.instance.SetPlayer(this);
+
+        if (GameManager.instance.activeCam)
+            GameManager.instance.activeCam.SetPlayer(this);
     }
 
     void Update()
@@ -46,7 +49,6 @@ public class PlayerController : MonoBehaviour
         hSpeed = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown("r"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 
     void LookDirection()
@@ -122,9 +124,9 @@ public class PlayerController : MonoBehaviour
     public void Dead()
     {
         dead = true;
-        foreach(GameObject c in bodyParts)
+        foreach (GameObject c in bodyParts)
         {
-            GameObject part = Instantiate(c, transform.position, Quaternion.Euler(0,0,Random.Range(0,360)));
+            GameObject part = Instantiate(c, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
         }
         anim.gameObject.SetActive(false);
         spearController.gameObject.SetActive(false);
@@ -150,7 +152,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator AnimateSword()
     {
-        //instantiate temp particles
         GameObject slash = Instantiate(swordSlashParticles, transform.position, transform.rotation) as GameObject;
         slash.transform.SetParent(spearController.gameObject.transform);
         slash.transform.localPosition = new Vector2(0.5f, 0);
@@ -158,7 +159,7 @@ public class PlayerController : MonoBehaviour
         slash.transform.SetParent(null);
         swordBackSprite.SetActive(false);
         attacking = true;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(0.25f);
         attacking = false;
         swordBackSprite.SetActive(true);
     }

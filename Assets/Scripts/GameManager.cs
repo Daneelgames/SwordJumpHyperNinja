@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
 
     public void FinishLevel()
     {
-        //temp
         foreach (GameObject c in bloodSplatters)
         {
             Destroy(c);
         }
         bloodSplatters.Clear();
+        Destroy(activeCam.gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void RestartLevel()
