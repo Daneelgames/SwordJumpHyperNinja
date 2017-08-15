@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a836165b49dd8884bbd932bc3592d26c
-timeCreated: 1502621173
+timeCreated: 1502810214
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,10 @@ TextureImporter:
     21300014: spike_3
     21300016: spike_2
     21300018: spike_1
+    21300020: plank_1
+    21300022: plank_2
+    21300024: plank_3
+    21300026: nail
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -181,7 +185,7 @@ TextureImporter:
         width: 155
         height: 742
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,7 +199,7 @@ TextureImporter:
         width: 630
         height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,7 +213,7 @@ TextureImporter:
         width: 705
         height: 148
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +227,7 @@ TextureImporter:
         width: 111
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,7 +241,7 @@ TextureImporter:
         width: 105
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,6 +254,62 @@ TextureImporter:
         y: 658
         width: 92
         height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: plank_1
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1007
+        width: 452
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: plank_2
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 931
+        width: 439
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: plank_3
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 842
+        width: 423
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nail
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 915
+        width: 58
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

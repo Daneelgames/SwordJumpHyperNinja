@@ -48,7 +48,10 @@ public class PlayerController : MonoBehaviour
     {
         hSpeed = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown("r"))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        {
+            if (!dead)
+                GameManager.instance.RestartLevel();
+        }
     }
 
     void LookDirection()
