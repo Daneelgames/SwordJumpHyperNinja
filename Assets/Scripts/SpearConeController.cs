@@ -44,7 +44,7 @@ public class SpearConeController : MonoBehaviour
     void Bounce(GameObject other)
     {
         //print("bounce");
-        if (other.layer == 8 || other.layer == 11)
+        if (other.layer == 8 || other.layer == 11 || other.layer == 16)
         {
             cooldown = maxCooldown;
             Vector3 bouncePos = pc.spearController.spearTarget.transform.position;

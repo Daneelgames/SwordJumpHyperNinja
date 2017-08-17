@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spear
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Gizmos
   - Goal
   - BodyParts
-  - 
-  - 
+  - PlayerHealth
+  - SolidHazard
   - 
   - 
   - 

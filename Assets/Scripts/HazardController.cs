@@ -7,7 +7,7 @@ public class HazardController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player" && other.gameObject.layer == 9)
+        if (other.gameObject.tag == "PlayerHealth" && other.gameObject.layer == 15)
         {
             if (!GameManager.instance.pc.dead)
                 GameManager.instance.RestartLevel();

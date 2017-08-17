@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public PlayerController pc;
     public CameraMovement activeCam;
-    List<GameObject> bloodSplatters = new List<GameObject>();
+    public List<GameObject> bloodSplatters = new List<GameObject>();
 
     void Awake()
     {

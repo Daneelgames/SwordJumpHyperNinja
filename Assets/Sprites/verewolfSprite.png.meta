@@ -1,28 +1,23 @@
 fileFormatVersion: 2
-guid: 41b2f3191ec47e640aa46d760cce1fb8
-timeCreated: 1501698729
+guid: b5b226c6548c434489878519daa30f91
+timeCreated: 1502984525
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: idle
-    21300002: walk_1
-    21300004: walk_2
-    21300006: walk_3
-    21300008: walk_4
-    21300010: monster_1spriteSheet_5
-    21300012: monster_1spriteSheet_6
-    21300014: monster_1spriteSheet_7
-    21300016: monster_1spriteSheet_8
-    21300018: monster_1spriteSheet_9
-    21300020: monster_1spriteSheet_10
-    21300022: monster_1spriteSheet_11
-    21300024: monster_1spriteSheet_12
-    21300026: monster_1spriteSheet_13
-    21300028: monster_1spriteSheet_14
-    21300030: monster_1spriteSheet_15
-    21300032: monster_1spriteSheet_16
-    21300034: monster_1spriteSheet_17
-    21300036: monster_1spriteSheet_18
+    21300000: leg_1
+    21300002: spike_3
+    21300004: spike_4
+    21300006: spike_1
+    21300008: leg_2
+    21300010: body_1
+    21300012: spike_2
+    21300014: leg_3
+    21300016: body_2
+    21300018: mouth_1
+    21300020: eye
+    21300022: face
+    21300024: mouth_2
+    21300026: wing
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -49,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -64,7 +59,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -126,267 +121,197 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle
+      name: leg_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 769
+        width: 71
+        height: 238
+      alignment: 9
+      pivot: {x: 0.56927276, y: 0.85819894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spike_3
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 755
+        width: 115
+        height: 259
+      alignment: 9
+      pivot: {x: 0.47148782, y: 0.12020485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spike_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 890
+        width: 60
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2046036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spike_1
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 768
+        width: 273
+        height: 234
+      alignment: 9
+      pivot: {x: 0.29581973, y: 0.14268403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: leg_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 527
+        width: 54
+        height: 226
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8699643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: body_1
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 449
+        width: 416
+        height: 279
+      alignment: 9
+      pivot: {x: 0.5709377, y: 0.21206807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spike_2
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 496
+        width: 117
+        height: 225
+      alignment: 9
+      pivot: {x: 0.6120992, y: 0.048240695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: leg_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 346
+        width: 72
+        height: 136
+      alignment: 9
+      pivot: {x: 0.38614953, y: 0.8134238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: body_2
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 110
+        width: 238
+        height: 338
+      alignment: 9
+      pivot: {x: 0.6239919, y: 0.18957186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mouth_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 95
+        width: 285
+        height: 152
+      alignment: 9
+      pivot: {x: 0.90842426, y: 0.5539294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eye
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 156
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: face
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 10
+        width: 127
+        height: 166
+      alignment: 9
+      pivot: {x: 0.5387273, y: 0.16420919}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mouth_2
       rect:
         serializedVersion: 2
         x: 7
-        y: 227
-        width: 71
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 6
+        width: 349
+        height: 88
+      alignment: 9
+      pivot: {x: 0.9321757, y: 0.5558901}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: walk_1
+      name: wing
       rect:
         serializedVersion: 2
-        x: 162
-        y: 226
-        width: 71
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: walk_2
-      rect:
-        serializedVersion: 2
-        x: 247
-        y: 222
-        width: 85
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: walk_3
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 221
-        width: 73
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: walk_4
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 224
-        width: 71
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 149
-        width: 74
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 148
-        width: 71
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 146
-        width: 84
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 151
-        width: 85
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 149
-        width: 89
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 76
-        width: 93
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 75
-        width: 86
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 73
-        width: 85
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 72
-        width: 89
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 72
-        width: 79
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 8
-        width: 74
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 8
-        width: 74
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 5
-        width: 76
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: monster_1spriteSheet_18
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 8
-        width: 84
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 156
+        y: 247
+        width: 254
+        height: 270
+      alignment: 9
+      pivot: {x: 0.11068876, y: 0.76839036}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

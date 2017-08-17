@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool dead = false;
     float vSpeed = 0;
     float hSpeed;
+    public Rigidbody2D healthCollider;
 
 
     void Awake()
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.instance.activeCam)
             GameManager.instance.activeCam.SetPlayer(this);
+
+        healthCollider.gameObject.transform.SetParent(null);
     }
 
     void Update()
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         ApplyForces();
         CheckGround();
+
+        healthCollider.MovePosition(transform.position);
     }
 
     void GetInput()
