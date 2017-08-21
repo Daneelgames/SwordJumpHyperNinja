@@ -24,7 +24,7 @@ TagManager:
   - BodyParts
   - PlayerHealth
   - SolidHazard
-  - 
+  - OffScreenHazard
   - 
   - 
   - 

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LinearBoundsMovement : MonoBehaviour
 {
+    public enum Type { PingPong, Conveyor };
+
+    public Type movementType = Type.PingPong;
+    public bool turning = false;
     public Rigidbody2D rb;
     public float speed = 1;
     public Collider2D coll;
@@ -32,24 +36,38 @@ public class LinearBoundsMovement : MonoBehaviour
         rb.velocity = newVel * speed;
     }
 
-    public void ChangeDirection()
+    public void BoundCollide()
     {
-        if (target == boundLeft)
-            target = boundRight;
-        else
-            target = boundLeft;
+        if (movementType == Type.PingPong)
+        {
+            if (target == boundLeft)
+                target = boundRight;
+            else
+                target = boundLeft;
 
-        StartCoroutine("Squash");
+            StartCoroutine("Squash");
+            SetDirection();
+        }
+        else if (movementType == Type.Conveyor)
+        {
+            ResetConveyor();
+        }
+    }
+
+    void ResetConveyor()
+    {
+        rb.position = boundLeft.transform.position;
         SetDirection();
     }
 
     IEnumerator Squash()
     {
+        turning = true;
+        print("squash");
         float t = 0f;
         float duration = 0.1f;
         while (duration > 0f)
         {
-            print("squash");
             duration -= Time.deltaTime;
             t += Time.deltaTime / 0.1f;
             float newScaleX = Mathf.Lerp(transform.localScale.x, 0.5f * direction, t);
@@ -66,6 +84,7 @@ public class LinearBoundsMovement : MonoBehaviour
             transform.localScale = new Vector2(newScaleX, transform.localScale.y);
             yield return null;
         }
+        turning = false;
     }
 
     public void DestroyBounds()

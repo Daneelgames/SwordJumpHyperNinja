@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 minPos;
     public Vector2 maxPos;
     bool goalZoom = false;
+    
     void Awake()
     {
         if (GameManager.instance.activeCam == null)
@@ -60,5 +61,10 @@ public class CameraMovement : MonoBehaviour
             t += Time.unscaledDeltaTime / timeToReachTarget;
             transform.position = Vector2.Lerp(startPosition, new Vector3(GameManager.instance.pc.transform.position.x, GameManager.instance.pc.transform.position.y, -10f), t);
         }
+    }
+
+    public void SetTrigger(string triggerName)
+    {
+        anim.SetTrigger(triggerName);
     }
 }

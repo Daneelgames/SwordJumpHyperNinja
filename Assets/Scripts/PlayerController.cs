@@ -132,6 +132,8 @@ public class PlayerController : MonoBehaviour
     public void Dead()
     {
         dead = true;
+        GameManager.instance.activeCam.SetTrigger("ShakeBig");
+
         foreach (GameObject c in bodyParts)
         {
             GameObject part = Instantiate(c, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));

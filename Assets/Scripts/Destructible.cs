@@ -52,6 +52,7 @@ public class Destructible : MonoBehaviour
             GameManager.instance.bloodSplatters.Add(blood);
         }
         _LBM.DestroyBounds();
+        GameManager.instance.activeCam.SetTrigger("Shake");
 
         foreach (GameObject c in bodyParts)
         {

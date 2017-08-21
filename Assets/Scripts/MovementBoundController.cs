@@ -9,13 +9,19 @@ public class MovementBoundController : MonoBehaviour
     public void SetMaster(LinearBoundsMovement _master)
     {
         master = _master;
-		transform.SetParent(null);
+        transform.SetParent(null);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other == master.coll)
+        if (other == master.coll && !master.turning)
         {
-            master.ChangeDirection();
+            if (master.movementType == LinearBoundsMovement.Type.Conveyor)
+            {
+                if (this == master.boundRight)
+                    master.BoundCollide();
+            }
+            else
+                master.BoundCollide();
         }
     }
 }

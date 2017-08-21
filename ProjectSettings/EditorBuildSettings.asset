@@ -6,32 +6,38 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/test_00.unity
+    path: Assets/Scenes/01_learnJump.unity
     guid: 437efded205507f4cb4a6999533f6e41
   - enabled: 1
-    path: Assets/Scenes/test_01.unity
+    path: Assets/Scenes/01_learnSpikes.unity
     guid: 2dbfb23bfbe335943a3f92289963aba0
   - enabled: 1
-    path: Assets/Scenes/test_02.unity
+    path: Assets/Scenes/01_learnWallJump.unity
     guid: a3741b8f5a517c245adabf46f6b09ab4
   - enabled: 1
-    path: Assets/Scenes/test_03.unity
+    path: Assets/Scenes/01_learnWolfs.unity
     guid: 014ab7395e4f1fc4c8da25c9fbf92c31
   - enabled: 1
-    path: Assets/Scenes/test_04.unity
+    path: Assets/Scenes/01_spikeCorridor.unity
     guid: 80359bbd33ebd6948b98cb73a36dbe49
   - enabled: 1
-    path: Assets/Scenes/test_05.unity
+    path: Assets/Scenes/01_wolfsOnPoles.unity
     guid: d7201c81d5973c04e9bef382e683dfb8
   - enabled: 1
-    path: Assets/Scenes/test_06.unity
+    path: Assets/Scenes/01_learnGrinder.unity
     guid: 3c82b6d4b57ee5443b610a558f1fa1ef
   - enabled: 1
-    path: Assets/Scenes/test_07.unity
+    path: Assets/Scenes/01_grinderFlyingWolfs.unity
     guid: 1c5b2264c58c23248ba0f36b9f3b4d8f
   - enabled: 1
-    path: Assets/Scenes/test_08.unity
+    path: Assets/Scenes/01_downOnFlyingWolfs.unity
     guid: f88b814e86a9e6f43bfa98f5486da6d1
   - enabled: 1
-    path: Assets/Scenes/test_09.unity
+    path: Assets/Scenes/01_spikesWolfsGrinderFlyingWolfs.unity
+    guid: de50b951c52ab544d8b75bc945f8a356
+  - enabled: 1
+    path: Assets/Scenes/01_learnMovingSpikePlatforms.unity
     guid: 2027e2affa634964b9b4292961e7e71c
+  - enabled: 1
+    path: Assets/Scenes/01_movingSpikePlatformsWolfs.unity
+    guid: 0c91a7fca26e7c84b92004dc1c75286d
