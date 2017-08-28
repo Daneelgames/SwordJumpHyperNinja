@@ -9,7 +9,7 @@ public class SpearConeController : MonoBehaviour
     public PlayerController pc;
     public float maxCooldown = 0.1f;
     float cooldown = 0;
-    bool canStay = true;
+    //bool canStay = true;
 
     void Update()
     {
@@ -24,16 +24,19 @@ public class SpearConeController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Bounce(other.gameObject);
+        if (other.gameObject.layer == 11 || other.gameObject.layer == 13)
+            Bounce(other.gameObject);
     }
     void OnCollisionStay2D(Collision2D other)
     {
-        if (canStay && cooldown <= 0)
+        //if (canStay && cooldown <= 0)
+        if (cooldown <= 0)
         {
             Bounce(other.gameObject);
-            canStay = false;
+            //canStay = false;
         }
     }
+    /*
     void OnCollisionExit2D(Collision2D other)
     {
         if (canStay)
@@ -41,6 +44,7 @@ public class SpearConeController : MonoBehaviour
             canStay = true;
         }
     }
+     */
     void Bounce(GameObject other)
     {
         //print("bounce");

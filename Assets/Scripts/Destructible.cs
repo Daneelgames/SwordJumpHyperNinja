@@ -5,12 +5,13 @@ using UnityEngine;
 public class Destructible : MonoBehaviour
 {
     public int health = 1;
-    public float maxHurtCooldown = 0.3f;
+    public float maxHurtCooldown = 0.1f;
     float hurtCooldown = 0f;
     public LinearBoundsMovement _LBM;
     public GameObject deathParticles;
     public GameObject slashParticles;
     public List<GameObject> bodyParts = new List<GameObject>();
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Spear" && other.gameObject.layer == 10)
@@ -51,8 +52,12 @@ public class Destructible : MonoBehaviour
             DontDestroyOnLoad(blood);
             GameManager.instance.bloodSplatters.Add(blood);
         }
+        
+        if (_LBM)
         _LBM.DestroyBounds();
-        GameManager.instance.activeCam.SetTrigger("Shake");
+
+        if (GameManager.instance.activeCam)
+            GameManager.instance.activeCam.SetTrigger("Shake");
 
         foreach (GameObject c in bodyParts)
         {

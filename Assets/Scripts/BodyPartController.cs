@@ -13,5 +13,14 @@ public class BodyPartController : MonoBehaviour
         //rb.AddTorque(Random.Range(-10, 10) * force);
         rb.angularVelocity = Random.value * force;
         DontDestroyOnLoad(gameObject);
+        GameManager.instance.AddBodyParts(gameObject);
+        StartCoroutine("DestroyParts");
+    }
+
+    IEnumerator DestroyParts()
+    {
+        yield return new WaitForSeconds(2);
+        GameManager.instance.RemoveBodyPart(gameObject);
+        Destroy(gameObject);
     }
 }

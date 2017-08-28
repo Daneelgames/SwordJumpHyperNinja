@@ -151,8 +151,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4642202106721670}
   - component: {fileID: 95453436110281648}
+  - component: {fileID: 114756246953263916}
   m_Layer: 0
-  m_Name: Rotater3
+  m_Name: GrinderThreeSaws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877495173747458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.09, y: -2.3, z: 0}
+  m_LocalPosition: {x: 12.8, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4815648168472444}
@@ -293,7 +294,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836655236245330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4168814020759600}
@@ -307,7 +308,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881490929959944}
   m_LocalRotation: {x: -0, y: -0, z: 0.7106555, w: 0.7035402}
-  m_LocalPosition: {x: -0.09, y: 1.37, z: 0}
+  m_LocalPosition: {x: -0.09, y: 1.85, z: 0}
   m_LocalScale: {x: 0.5692298, y: 0.5692298, z: 0.5692298}
   m_Children: []
   m_Father: {fileID: 4642202106721670}
@@ -408,6 +409,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114756246953263916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877495173747458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a388aea160df307439916527ffb24a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95453436110281648}
+  boolTrue: CounterClockwise
+  boolFalse: 
 --- !u!212 &212216987679266726
 SpriteRenderer:
   m_ObjectHideFlags: 1

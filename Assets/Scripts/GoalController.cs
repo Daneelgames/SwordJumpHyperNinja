@@ -26,7 +26,8 @@ public class GoalController : MonoBehaviour
     IEnumerator FinishLevel()
     {
         //GameManager.instance.activeCam.GoalZoom();
-        GameManager.instance.activeCam.SetTrigger("ShakeBig");
+        if (GameManager.instance.activeCam)
+            GameManager.instance.activeCam.SetTrigger("ShakeBig");
         bloodHolder.EmitBlood();
         anim.SetTrigger("Dead");
         Instantiate(bloodSplatter, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));

@@ -54,7 +54,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4265370310047448}
   - component: {fileID: 50859234953492876}
-  - component: {fileID: 114936091312251414}
   - component: {fileID: 95056487502477146}
   - component: {fileID: 114765800616605246}
   - component: {fileID: 70011734883746188}
@@ -183,18 +182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 50859234953492876}
   force: 5
---- !u!114 &114936091312251414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967517116010446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89784e27d16dfb4c94337590530fefe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 2
 --- !u!198 &198351944121513174
 ParticleSystem:
   m_ObjectHideFlags: 1

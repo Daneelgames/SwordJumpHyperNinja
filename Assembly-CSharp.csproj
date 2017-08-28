@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BodyPartController.cs" />
+     <Compile Include="Assets\GoalEnemyViewAreaController.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -115,6 +116,7 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpearConeController.cs" />
      <Compile Include="Assets\Scripts\SpearController.cs" />
+     <Compile Include="Assets\SetBoolOnStart.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

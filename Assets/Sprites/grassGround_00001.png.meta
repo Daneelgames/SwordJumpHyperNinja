@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a836165b49dd8884bbd932bc3592d26c
-timeCreated: 1502979042
+timeCreated: 1503935988
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,6 +19,9 @@ TextureImporter:
     21300024: plank_3
     21300026: nail
     21300028: saw
+    21300030: chainI
+    21300032: chainO
+    21300034: barrel
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -326,7 +329,49 @@ TextureImporter:
         width: 342
         height: 345
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chainI
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 36
+        width: 99
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: chainO
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 11
+        width: 102
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: barrel
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1146
+        width: 287
+        height: 297
+      alignment: 9
+      pivot: {x: 0.5, y: 0.037637115}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -39,5 +39,23 @@ EditorBuildSettings:
     path: Assets/Scenes/01_learnMovingSpikePlatforms.unity
     guid: 2027e2affa634964b9b4292961e7e71c
   - enabled: 1
-    path: Assets/Scenes/01_movingSpikePlatformsWolfs.unity
+    path: Assets/Scenes/01_movingSpikePlatformsHard.unity
     guid: 0c91a7fca26e7c84b92004dc1c75286d
+  - enabled: 1
+    path: Assets/Scenes/01_movingPlatformsFlyingWolfs.unity
+    guid: 41eba9fb946fd874ca31f9fe10aaa38f
+  - enabled: 1
+    path: Assets/Scenes/01_movingSpikePlatformsGrinder.unity
+    guid: 5ffec138a54c17d49b60aa7508b9d876
+  - enabled: 1
+    path: Assets/Scenes/01_learnMovingGrinder.unity
+    guid: d42118a5032ba504f9269625895b2939
+  - enabled: 1
+    path: Assets/Scenes/01_movingGrinderVerticalPlatforms.unity
+    guid: 4300f31605974f843a64e645df108ee8
+  - enabled: 1
+    path: Assets/Scenes/01_movingGrinderVerticalPlatformsDownAndUp.unity
+    guid: de66d88a733873947bde49db0a622802
+  - enabled: 1
+    path: Assets/Scenes/01_learnBombs.unity
+    guid: b526db866d3b74842b4392724996c9b7

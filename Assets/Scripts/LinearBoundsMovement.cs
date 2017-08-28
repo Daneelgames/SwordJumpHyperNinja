@@ -24,18 +24,21 @@ public class LinearBoundsMovement : MonoBehaviour
         target = boundRight;
         SetDirection();
     }
-
     void SetDirection()
     {
         newVel = target.transform.position - transform.position;
         newVel.Normalize();
+        print("new vel is " + newVel);
     }
     void FixedUpdate()
     {
         //Vector2 newVel = new Vector2(direction * speed, rb.velocity.y);
         rb.velocity = newVel * speed;
     }
-
+    void Update()
+    {
+        //print(rb.velocity);
+    }
     public void BoundCollide()
     {
         if (movementType == Type.PingPong)
@@ -46,20 +49,18 @@ public class LinearBoundsMovement : MonoBehaviour
                 target = boundLeft;
 
             StartCoroutine("Squash");
-            SetDirection();
         }
         else if (movementType == Type.Conveyor)
         {
             ResetConveyor();
         }
     }
-
     void ResetConveyor()
     {
-        rb.position = boundLeft.transform.position;
+        //rb.position = boundLeft.transform.position;
+        transform.position = boundLeft.transform.position;
         SetDirection();
     }
-
     IEnumerator Squash()
     {
         turning = true;
@@ -85,8 +86,8 @@ public class LinearBoundsMovement : MonoBehaviour
             yield return null;
         }
         turning = false;
+        SetDirection();
     }
-
     public void DestroyBounds()
     {
         Destroy(boundLeft.gameObject);

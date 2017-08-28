@@ -89,8 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BodyPartController.cs" />
-    <Compile Include="Assets\GoalEnemyViewAreaController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -138,17 +136,20 @@
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\AnimatorRandomTime.cs" />
     <Compile Include="Assets\Scripts\BloodHolderController.cs" />
+    <Compile Include="Assets\Scripts\BodyPartController.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\DestroyOnTime.cs" />
     <Compile Include="Assets\Scripts\Destructible.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GoalController.cs" />
+    <Compile Include="Assets\Scripts\GoalEnemyViewAreaController.cs" />
     <Compile Include="Assets\Scripts\HazardController.cs" />
     <Compile Include="Assets\Scripts\LevelParameters.cs" />
     <Compile Include="Assets\Scripts\LinearBoundsMovement.cs" />
     <Compile Include="Assets\Scripts\MovementBoundController.cs" />
     <Compile Include="Assets\Scripts\ParticlesUnscaledTime.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SetBoolOnStart.cs" />
     <Compile Include="Assets\Scripts\SpearConeController.cs" />
     <Compile Include="Assets\Scripts\SpearController.cs" />
   </ItemGroup>
