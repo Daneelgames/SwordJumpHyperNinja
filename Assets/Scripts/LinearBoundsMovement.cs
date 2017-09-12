@@ -28,15 +28,16 @@ public class LinearBoundsMovement : MonoBehaviour
     {
         newVel = target.transform.position - transform.position;
         newVel.Normalize();
-        print("new vel is " + newVel);
+        //print("new vel is " + newVel);
     }
     void FixedUpdate()
     {
         //Vector2 newVel = new Vector2(direction * speed, rb.velocity.y);
-        rb.velocity = newVel * speed;
+        //rb.velocity = newVel * speed; use if fixed
     }
     void Update()
     {
+        transform.position = transform.position + new Vector3(newVel.x, newVel.y, 0) * speed * 1.5f * Time.deltaTime;
         //print(rb.velocity);
     }
     public void BoundCollide()

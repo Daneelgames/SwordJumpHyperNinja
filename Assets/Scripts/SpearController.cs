@@ -36,7 +36,8 @@ public class SpearController : MonoBehaviour
         //if (Input.GetAxisRaw("HorizontalSpear") != 0 || Input.GetAxisRaw("VerticalSpear") != 0)
         spearDirection = new Vector2(hs, vs);
 
-        PositionSpearTarget();
+        if (pc)
+            PositionSpearTarget();
     }
     void PositionSpearTarget()
     {

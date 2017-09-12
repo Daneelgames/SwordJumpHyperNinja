@@ -2447,7 +2447,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713600118557114}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2599,6 +2599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114186190945866476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2611,6 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114249059048986046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2623,6 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114516522093432164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2675,6 +2678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangerDelay: 0
+  coll: {fileID: 58034566112909512}
 --- !u!114 &114822666565845726
 MonoBehaviour:
   m_ObjectHideFlags: 1

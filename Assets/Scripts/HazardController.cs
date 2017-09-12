@@ -32,17 +32,18 @@ public class HazardController : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerHealth" && other.gameObject.layer == 15)
         {
-            KillPlayer();
+            if (dangerous && !GameManager.instance.pc.dead)
+            {
+                dangerous = false;
+                KillPlayer();
+            }
         }
     }
 
     void KillPlayer()
     {
-        if (dangerous && !GameManager.instance.pc.dead)
-            {
-                GameManager.instance.RestartLevel();
-                coll.enabled = false;
-                dangerous = false;
-            }
+        GameManager.instance.RestartLevel();
+        if (coll)
+            coll.enabled = false;
     }
 }

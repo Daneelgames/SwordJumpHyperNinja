@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dangerDelay: 0.01
+  dangerDelay: 0
   coll: {fileID: 58521009042581100}
 --- !u!198 &198052255346313598
 ParticleSystem:

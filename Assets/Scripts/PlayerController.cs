@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> bodyParts = new List<GameObject>();
     bool attacking = false;
     public bool dead = false;
+    bool wallOnLeft = false;
+    bool wallOnRight = false;
     float vSpeed = 0;
     float hSpeed;
     public Rigidbody2D healthCollider;
@@ -59,6 +61,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetBound(string side, bool inTrigger)
+    {
+        switch (side)
+        {
+            case "Left":
+                wallOnLeft = inTrigger;
+                break;
+            case "Right":
+                wallOnRight = inTrigger;
+                break;
+        }
+    }
+
     void LookDirection()
     {
         if (grounded)
@@ -95,10 +110,15 @@ public class PlayerController : MonoBehaviour
             else if (newVel.x < -7)
                 newVel.x = -7;
 
+            if (newVel.x > 0 && wallOnRight)
+                newVel = new Vector2(0, rb.velocity.y);
+            else if (newVel.x < 0 && wallOnLeft)
+                newVel = new Vector2(0, rb.velocity.y);
+
             rb.velocity = newVel;
         }
-        else
-            rb.velocity = Vector2.zero;
+        //else
+        // rb.velocity = Vector2.zero;
     }
 
     void Animate()
@@ -108,7 +128,8 @@ public class PlayerController : MonoBehaviour
             if (grounded)
             {
                 anim.SetBool("Jump", false);
-                if (rb.velocity != Vector2.zero)
+                //if (rb.velocity != Vector2.zero)
+                if (hSpeed != 0)
                     anim.SetBool("Move", true);
                 else
                     anim.SetBool("Move", false);
@@ -173,5 +194,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.25f);
         attacking = false;
         swordBackSprite.SetActive(true);
+    }
+
+    void OnDestroy()
+    {
+        print("player destroyed");
     }
 }

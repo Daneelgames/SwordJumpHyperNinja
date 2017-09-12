@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 23606036265580508}
   - component: {fileID: 61182612800789388}
   - component: {fileID: 114823861939051186}
+  - component: {fileID: 50152910984850260}
   m_Layer: 0
   m_Name: boundLeft
   m_TagString: Untagged
@@ -314,6 +315,7 @@ GameObject:
   - component: {fileID: 23800048200559258}
   - component: {fileID: 61833970770602148}
   - component: {fileID: 114289238957477708}
+  - component: {fileID: 50999764628745422}
   m_Layer: 0
   m_Name: boundRight
   m_TagString: Untagged
@@ -458,9 +460,9 @@ GameObject:
   - component: {fileID: 4173321037228454}
   - component: {fileID: 114717137727799558}
   - component: {fileID: 114757753450690154}
-  - component: {fileID: 50767788359920720}
   - component: {fileID: 61825719568347304}
   - component: {fileID: 95256640416120426}
+  - component: {fileID: 50783051507213940}
   m_Layer: 16
   m_Name: MovingSpikesConveyor
   m_TagString: Untagged
@@ -1537,26 +1539,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338314574073058}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &50767788359920720
+--- !u!50 &50152910984850260
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338314574073058}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 5000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50783051507213940
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650653882343784}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50999764628745422
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387186339477924}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5000
-  m_LinearDrag: 13.41
-  m_AngularDrag: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61182612800789388
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1671,6 +1713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangerDelay: 0
+  coll: {fileID: 61825719568347304}
 --- !u!114 &114757753450690154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1684,7 +1728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementType: 1
   turning: 0
-  rb: {fileID: 50767788359920720}
+  rb: {fileID: 50783051507213940}
   speed: 3
   coll: {fileID: 61825719568347304}
   boundLeft: {fileID: 114823861939051186}

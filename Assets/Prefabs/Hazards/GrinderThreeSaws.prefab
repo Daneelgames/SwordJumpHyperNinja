@@ -275,7 +275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877495173747458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.8, y: 0.26, z: 0}
+  m_LocalPosition: {x: -24.45, y: -2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4815648168472444}
@@ -370,7 +370,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6e462c08d24b1684c895824faac347c7, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114385680364984962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,6 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114620012226920102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a93e46c6d6ea14eae715d32f1be382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dangerDelay: 0
+  coll: {fileID: 0}
 --- !u!114 &114756246953263916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,8 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95453436110281648}
-  boolTrue: CounterClockwise
-  boolFalse: 
+  boolTrue: 
+  boolFalse: CounterClockwise
 --- !u!212 &212216987679266726
 SpriteRenderer:
   m_ObjectHideFlags: 1
