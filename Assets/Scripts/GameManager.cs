@@ -22,6 +22,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F2) &&  SceneManager.GetActiveScene().buildIndex + 1 != null)
+        FinishLevel();
+
+        if (Input.GetKeyDown(KeyCode.F1)  && SceneManager.GetActiveScene().buildIndex != 0)
+        
+        PastLevel();
+    }
+
     public void FinishLevel()
     {
         foreach (GameObject c in bloodSplatters)
@@ -37,7 +47,26 @@ public class GameManager : MonoBehaviour
         bodyParts.Clear();
 
         Destroy(activeCam.gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PastLevel()
+    {
+        foreach (GameObject c in bloodSplatters)
+        {
+            Destroy(c);
+        }
+        bloodSplatters.Clear();
+
+        foreach (GameObject c in bodyParts)
+        {
+            Destroy(c);
+        }
+        bodyParts.Clear();
+
+        Destroy(activeCam.gameObject);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void AddBodyParts(GameObject go)

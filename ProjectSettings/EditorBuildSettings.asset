@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/01_boss.unity
-    guid: 2e925451ee629534782f9d389e9930a8
-  - enabled: 1
     path: Assets/Scenes/01_learnJump.unity
     guid: 437efded205507f4cb4a6999533f6e41
   - enabled: 1
@@ -68,3 +65,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01_learnMovingBombs.unity
     guid: e939f059f000faa45bb2e4d6a2030fcb
+  - enabled: 1
+    path: Assets/Scenes/01_boss.unity
+    guid: 2e925451ee629534782f9d389e9930a8
