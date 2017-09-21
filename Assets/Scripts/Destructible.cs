@@ -11,6 +11,7 @@ public class Destructible : MonoBehaviour
     public GameObject deathParticles;
     public GameObject slashParticles;
     public List<GameObject> bodyParts = new List<GameObject>();
+    public AudioSource au;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -21,6 +22,16 @@ public class Destructible : MonoBehaviour
             {
                 hurtCooldown = maxHurtCooldown;
                 health -= 1;
+
+                //au.pitch = Random.Range(0.75f, 1f);
+                //au.Play();
+
+                GameObject auObj = new GameObject();
+                AudioSource auNew = auObj.AddComponent<AudioSource>();
+                auNew.clip = au.clip;
+                auNew.pitch = Random.Range(0.5f, 1f);
+                auNew.Play();
+                Destroy(auObj, 1f);
 
                 if (slashParticles != null)
                 {
@@ -52,9 +63,9 @@ public class Destructible : MonoBehaviour
             DontDestroyOnLoad(blood);
             GameManager.instance.bloodSplatters.Add(blood);
         }
-        
+
         if (_LBM)
-        _LBM.DestroyBounds();
+            _LBM.DestroyBounds();
 
         if (GameManager.instance.activeCam)
             GameManager.instance.activeCam.SetTrigger("Shake");

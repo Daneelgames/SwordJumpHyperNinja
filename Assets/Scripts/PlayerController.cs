@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour
     float hSpeed;
     public Rigidbody2D healthCollider;
 
+    public AudioSource stepSource;
+    public AudioClip deathClip;
+    public AudioClip landClip;
+    public AudioSource jumpSource;
+    public ParticleSystem jumpParticles;
+    public GameObject landParticles;
+
 
     void Awake()
     {
@@ -35,12 +42,38 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.activeCam.SetPlayer(this);
 
         healthCollider.gameObject.transform.SetParent(null);
+
+        InvokeRepeating("Stepping", 0.15f, 0.15f);
+    }
+
+    void Stepping()
+    {
+        if (grounded && hSpeed != 0)
+        {
+            stepSource.pitch = Random.Range(0.75f, 1.25f);
+            stepSource.Play();
+        }
+    }
+    void Land()
+    {
+        jumpSource.Stop();
+
+        var jumpEmission = jumpParticles.emission;
+        jumpEmission.rateOverTime = 0;
+
+        Instantiate(landParticles, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
+        stepSource.pitch = Random.Range(0.75f, 1.25f);
+        stepSource.PlayOneShot(landClip);
     }
 
     void Update()
     {
         GetInput();
         Animate();
+
+        //set jump sfx pitch
+        if (!grounded)
+            jumpSource.pitch -= 0.1f * Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -90,9 +123,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!dead)
         {
-            if (grounded && !attacking)
+            if (grounded)
             {
-                rb.velocity = new Vector2(hSpeed * speed, rb.velocity.y);
+                if (!attacking)
+                    rb.velocity = new Vector2(hSpeed * speed, rb.velocity.y);
             }
             else if (!grounded)
             {
@@ -153,6 +187,12 @@ public class PlayerController : MonoBehaviour
     public void Dead()
     {
         dead = true;
+
+        stepSource.pitch = 1;
+        stepSource.PlayOneShot(deathClip);
+
+        jumpSource.Stop();
+
         if (GameManager.instance.activeCam)
             GameManager.instance.activeCam.SetTrigger("ShakeBig");
 
@@ -167,9 +207,25 @@ public class PlayerController : MonoBehaviour
     void CheckGround()
     {
         if (Physics2D.Raycast(transform.position, Vector2.down, 0.6f, solidMask))
+        {
+            if (!grounded)
+                Land();
+
             grounded = true;
+        }
         else
+        {
+            if (grounded)
+            {
+                jumpSource.Stop();
+                jumpSource.pitch = Random.Range(1f, 1.25f);
+                jumpSource.Play();
+
+                var jumpEmission = jumpParticles.emission;
+                jumpEmission.rateOverTime = 50;
+            }
             grounded = false;
+        }
     }
 
     public void Bounce(Vector3 bouncePos) // sword attack
@@ -178,6 +234,10 @@ public class PlayerController : MonoBehaviour
 
         if ((bouncePos.y > transform.position.y && rb.velocity.y > 0) || (bouncePos.y < transform.position.y && rb.velocity.y < 0))
             rb.velocity = new Vector2(rb.velocity.x, 0);
+
+        jumpSource.Stop();
+        jumpSource.pitch = Random.Range(1f, 1.25f);
+        jumpSource.Play();
 
         rb.AddForce((transform.position - bouncePos) * 10, ForceMode2D.Impulse);
     }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Animator fadeAnim;
     public static GameManager instance;
     public PlayerController pc;
     public CameraMovement activeCam;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            Fade(false);
         }
         else
             Destroy(gameObject);
@@ -24,12 +26,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F2) &&  SceneManager.GetActiveScene().buildIndex + 1 != null)
-        FinishLevel();
+        if (Input.GetKeyDown(KeyCode.F2) && SceneManager.GetActiveScene().buildIndex + 1 != null)
+            FinishLevel();
 
-        if (Input.GetKeyDown(KeyCode.F1)  && SceneManager.GetActiveScene().buildIndex != 0)
-        
-        PastLevel();
+        if (Input.GetKeyDown(KeyCode.F1) && SceneManager.GetActiveScene().buildIndex != 0)
+
+            PastLevel();
     }
 
     public void FinishLevel()
@@ -47,7 +49,8 @@ public class GameManager : MonoBehaviour
         bodyParts.Clear();
 
         Destroy(activeCam.gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Fade(false);
     }
 
     public void PastLevel()
@@ -66,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         Destroy(activeCam.gameObject);
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void AddBodyParts(GameObject go)
@@ -90,10 +93,17 @@ public class GameManager : MonoBehaviour
         StartCoroutine("PlayerDead");
     }
 
+    public void Fade(bool black)
+    {
+        fadeAnim.SetBool("Black", black);
+    }
+
     IEnumerator PlayerDead()
     {
         pc.Dead();
-        yield return new WaitForSecondsRealtime(0.25f);
+        Fade(true);
+        yield return new WaitForSecondsRealtime(0.5f);
+        Fade(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

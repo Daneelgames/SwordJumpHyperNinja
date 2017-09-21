@@ -15,6 +15,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 maxPos;
     bool goalZoom = false;
 
+
     void Awake()
     {
         if (GameManager.instance.activeCam == null)

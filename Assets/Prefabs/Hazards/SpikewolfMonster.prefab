@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 114977897514141178}
   - component: {fileID: 50618929043898520}
   - component: {fileID: 70043487276287864}
+  - component: {fileID: 82372658594151518}
   m_Layer: 11
   m_Name: SpikeWolfMonster
   m_TagString: Untagged
@@ -1322,6 +1323,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.2}
   m_Size: {x: 3, y: 1.75}
   m_Direction: 1
+--- !u!82 &82372658594151518
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843803928037028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52ff132db5be7c341b81f1227f52789a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95438917288050710
 Animator:
   serializedVersion: 3
@@ -1431,6 +1512,7 @@ MonoBehaviour:
   - {fileID: 1098918887257544, guid: f18e3b78e2b0e0149bacdada18064ac8, type: 2}
   - {fileID: 1967517116010446, guid: 74110ff3d98d6bb4ba4c5cf90c456da2, type: 2}
   - {fileID: 1660720067072950, guid: 0774540d564ad7b4db5c276d63772f8e, type: 2}
+  au: {fileID: 82372658594151518}
 --- !u!212 &212041217460687256
 SpriteRenderer:
   m_ObjectHideFlags: 1

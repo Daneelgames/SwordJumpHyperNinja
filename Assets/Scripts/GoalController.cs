@@ -8,6 +8,7 @@ public class GoalController : MonoBehaviour
     public Animator anim;
     public BloodHolderController bloodHolder;
     int direction;
+    public AudioSource au;
 
     void Start()
     {
@@ -28,11 +29,17 @@ public class GoalController : MonoBehaviour
         //GameManager.instance.activeCam.GoalZoom();
         if (GameManager.instance.activeCam)
             GameManager.instance.activeCam.SetTrigger("ShakeBig");
+
+        GameManager.instance.pc.jumpSource.Stop();
+
+        au.Play();
         bloodHolder.EmitBlood();
         anim.SetTrigger("Dead");
         Instantiate(bloodSplatter, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1.5f);
+        GameManager.instance.Fade(true);
+        yield return new WaitForSecondsRealtime(0.5f);
         Time.timeScale = 1f;
         GameManager.instance.FinishLevel();
     }

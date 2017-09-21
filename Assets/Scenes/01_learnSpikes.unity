@@ -293,6 +293,7 @@ MonoBehaviour:
   pc: {fileID: 0}
   activeCam: {fileID: 0}
   bloodSplatters: []
+  bodyParts: []
 --- !u!1 &52583195
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5570,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4272535084928198, guid: 4fb782cc2bff8a9429957e37a287111e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.43
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4272535084928198, guid: 4fb782cc2bff8a9429957e37a287111e, type: 2}
       propertyPath: m_LocalPosition.z

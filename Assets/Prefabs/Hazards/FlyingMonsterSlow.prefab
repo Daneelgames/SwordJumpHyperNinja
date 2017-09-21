@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 114404857201917170}
   - component: {fileID: 50893961270896540}
   - component: {fileID: 70102674381331440}
+  - component: {fileID: 82524770291590538}
   m_Layer: 11
   m_Name: FlyingMonsterSlow
   m_TagString: Untagged
@@ -1023,6 +1024,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0.06516243, y: -0.008482703}
   m_Size: {x: 2.0348015, y: 2.0348015}
   m_Direction: 1
+--- !u!82 &82524770291590538
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501386984629278}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52ff132db5be7c341b81f1227f52789a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95835247182315698
 Animator:
   serializedVersion: 3
@@ -1090,6 +1171,7 @@ MonoBehaviour:
   - {fileID: 1660720067072950, guid: 0774540d564ad7b4db5c276d63772f8e, type: 2}
   - {fileID: 1769653425755570, guid: dbb041f024691ac429cc3207438899c9, type: 2}
   - {fileID: 1769653425755570, guid: dbb041f024691ac429cc3207438899c9, type: 2}
+  au: {fileID: 82524770291590538}
 --- !u!114 &114511605258721452
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 4806046440289722}
   - component: {fileID: 114489886606025624}
   - component: {fileID: 70353454934767482}
+  - component: {fileID: 82565642826447452}
   m_Layer: 11
   m_Name: Goal
   m_TagString: Untagged
@@ -355,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 1411605218124428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4922919817848290}
   - {fileID: 4251888907323922}
@@ -501,6 +502,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 1.005398}
   m_Size: {x: 2.0276551, y: 2.6007962}
   m_Direction: 0
+--- !u!82 &82565642826447452
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790594651158346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8c6c89d629aa7fa4eab63556de6ada68, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95223110477224110
 Animator:
   serializedVersion: 3
@@ -560,6 +641,7 @@ MonoBehaviour:
   bloodSplatter: {fileID: 136784, guid: 273acd9f54f187a48a419d6b81376337, type: 2}
   anim: {fileID: 95223110477224110}
   bloodHolder: {fileID: 114144090493408788}
+  au: {fileID: 82565642826447452}
 --- !u!212 &212002595106087948
 SpriteRenderer:
   m_ObjectHideFlags: 1
