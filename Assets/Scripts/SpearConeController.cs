@@ -80,13 +80,45 @@ public class SpearConeController : MonoBehaviour
     void Bounce(GameObject other)
     {
         //print("bounce");
-        if (other.layer == 8 || other.layer == 11 || other.layer == 16)
+        if (other.layer == 8 || other.layer == 11 || other.layer == 10 || other.layer == 16|| other.layer == 15)
         {
-            PlaySound();
+            bool canBounce = true;
 
-            cooldown = maxCooldown;
-            Vector3 bouncePos = pc.spearController.spearTarget.transform.position;
-            pc.Bounce(bouncePos);
+            if (other.gameObject.tag == "PlayerHealth"  && !pc.p2)
+                canBounce = false;
+            if (other.gameObject.tag == "P2Health"  && pc.p2)
+                canBounce = false;
+            if (other.gameObject.tag == "PlayerHealth"  && pc.p2)
+            {
+                if (!GameManager.instance.pc.dead)
+                {
+                    KillPlayer();
+                }
+            }
+            if  (other.gameObject.tag == "P2Health" && !pc.p2)
+            {
+                if (!GameManager.instance.pc2.dead)
+                {
+                    KillP2();
+                }
+            }
+
+            if (canBounce)
+            {
+                cooldown = maxCooldown;
+                PlaySound();
+                Vector3 bouncePos = pc.spearController.spearTarget.transform.position;
+                pc.Bounce(bouncePos);
+            }
+        
         }
+    }
+    void KillPlayer()
+    {
+        GameManager.instance.RestartLevel(false);
+    }
+    void KillP2()
+    {
+        GameManager.instance.RestartLevel(true);
     }
 }

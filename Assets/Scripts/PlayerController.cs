@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool p2 = false;
     public Rigidbody2D rb;
     public float speed;
     public Animator anim;
@@ -36,10 +37,17 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        GameManager.instance.SetPlayer(this);
+        if(!p2)
+        {
+            GameManager.instance.SetPlayer(this);
 
-        if (GameManager.instance.activeCam)
-            GameManager.instance.activeCam.SetPlayer(this);
+            if (GameManager.instance.activeCam)
+                GameManager.instance.activeCam.SetPlayer(this);
+        }
+        else
+        {
+            GameManager.instance.SetP2(this);
+        }
 
         healthCollider.gameObject.transform.SetParent(null);
 
@@ -56,14 +64,20 @@ public class PlayerController : MonoBehaviour
     }
     void Land()
     {
-        jumpSource.Stop();
-
+        JumpSoundStop();
         var jumpEmission = jumpParticles.emission;
         jumpEmission.rateOverTime = 0;
 
         Instantiate(landParticles, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
         stepSource.pitch = Random.Range(0.75f, 1.25f);
         stepSource.PlayOneShot(landClip);
+    }
+
+    public void JumpSoundStop()
+    {
+        print ("jump sound stop");
+        jumpSource.Stop();
+
     }
 
     void Update()
@@ -86,11 +100,20 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        hSpeed = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown("r"))
+        if (!p2)
+            hSpeed = Input.GetAxis("Horizontal");
+        else
+            hSpeed = Input.GetAxis("HorizontalP2");
+
+		if (Input.GetButtonDown("Restart"))
         {
-            if (!dead)
-                GameManager.instance.RestartLevel();
+			if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
+                GameManager.instance.RestartLevel(false);
+        }
+		else if (Input.GetButtonDown("RestartP2"))
+        {
+			if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
+                GameManager.instance.RestartLevel(true);
         }
     }
 
@@ -130,7 +153,10 @@ public class PlayerController : MonoBehaviour
             }
             else if (!grounded)
             {
-                rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
+                if (!p2)
+                    rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
+                    else
+                    rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("HorizontalP2") / 8.5f, rb.velocity.y);
             }
             var newVel = rb.velocity;
 
@@ -191,7 +217,7 @@ public class PlayerController : MonoBehaviour
         stepSource.pitch = 1;
         stepSource.PlayOneShot(deathClip);
 
-        jumpSource.Stop();
+        JumpSoundStop();
 
         if (GameManager.instance.activeCam)
             GameManager.instance.activeCam.SetTrigger("ShakeBig");
@@ -212,12 +238,13 @@ public class PlayerController : MonoBehaviour
                 Land();
 
             grounded = true;
+            JumpSoundStop();
         }
         else
         {
             if (grounded)
             {
-                jumpSource.Stop();
+                JumpSoundStop();
                 jumpSource.pitch = Random.Range(1f, 1.25f);
                 jumpSource.Play();
 
@@ -235,9 +262,13 @@ public class PlayerController : MonoBehaviour
         if ((bouncePos.y > transform.position.y && rb.velocity.y > 0) || (bouncePos.y < transform.position.y && rb.velocity.y < 0))
             rb.velocity = new Vector2(rb.velocity.x, 0);
 
-        jumpSource.Stop();
-        jumpSource.pitch = Random.Range(1f, 1.25f);
-        jumpSource.Play();
+        JumpSoundStop();
+
+        if (!GameManager.instance.levelClear)
+        {
+            jumpSource.pitch = Random.Range(1f, 1.25f);
+            jumpSource.Play();
+        }
 
         rb.AddForce((transform.position - bouncePos) * 10, ForceMode2D.Impulse);
     }

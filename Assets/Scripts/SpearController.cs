@@ -30,8 +30,20 @@ public class SpearController : MonoBehaviour
     void GetInput()
     {
         // SPEAR TARGETING
-        float hs = Input.GetAxis("HorizontalSpear");
-        float vs = Input.GetAxis("VerticalSpear");
+        
+        float hs;
+        float vs;
+
+        if (!pc.p2)
+        {
+            hs = Input.GetAxis("HorizontalSpear");
+            vs = Input.GetAxis("VerticalSpear");
+        }
+        else
+        {
+            hs = Input.GetAxis("HorizontalSpearP2");
+            vs = Input.GetAxis("VerticalSpearP2");
+        }
 
         //if (Input.GetAxisRaw("HorizontalSpear") != 0 || Input.GetAxisRaw("VerticalSpear") != 0)
         spearDirection = new Vector2(hs, vs);

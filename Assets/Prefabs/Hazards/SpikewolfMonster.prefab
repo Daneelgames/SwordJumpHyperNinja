@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 70043487276287864}
   - component: {fileID: 82372658594151518}
   m_Layer: 11
-  m_Name: SpikeWolfMonster
+  m_Name: SpikewolfMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -30,19 +30,33 @@ public class HazardController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "PlayerHealth" && other.gameObject.layer == 15)
+        if (other.gameObject.layer == 15)
         {
-            if (dangerous && !GameManager.instance.pc.dead)
+            if (dangerous && !GameManager.instance.pc.dead && !GameManager.instance.pc2.dead)
             {
-                dangerous = false;
-                KillPlayer();
+                if (other.gameObject.tag == "PlayerHealth")
+                {
+                        dangerous = false;
+                        KillPlayer();
+                }
+                else if (other.gameObject.tag == "P2Health")
+                {
+                    dangerous = false;
+                    KillP2();
+                }
             }
         }
     }
 
     void KillPlayer()
     {
-        GameManager.instance.RestartLevel();
+        GameManager.instance.RestartLevel(false);
+        if (coll)
+            coll.enabled = false;
+    }
+    void KillP2()
+    {
+        GameManager.instance.RestartLevel(true);
         if (coll)
             coll.enabled = false;
     }

@@ -22,6 +22,22 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: HorizontalP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: left
+    positiveButton: right
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Vertical
     descriptiveName: 
     descriptiveNegativeName: 
@@ -38,43 +54,43 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Mouse X
+    m_Name: VerticalP2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: down
+    positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: 0.1
-    snap: 0
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
     invert: 0
-    type: 1
+    type: 0
     axis: 0
-    joyNum: 0
-  - serializedVersion: 3
-    m_Name: Mouse Y
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0
-    sensitivity: 0.1
-    snap: 0
-    invert: 0
-    type: 1
-    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: HorizontalSpear
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: j
+    positiveButton: l
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.001
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: HorizontalSpearP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: '[4]'
+    positiveButton: '[6]'
     altNegativeButton: 
     altPositiveButton: 
     gravity: 10
@@ -89,8 +105,8 @@ InputManager:
     m_Name: VerticalSpear
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: down
-    positiveButton: up
+    negativeButton: k
+    positiveButton: i
     altNegativeButton: 
     altPositiveButton: 
     gravity: 10
@@ -102,37 +118,53 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: VerticalSpearP2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: enter
+    negativeButton: '[2]'
+    positiveButton: '[8]'
     altNegativeButton: 
-    altPositiveButton: space
-    gravity: 1000
+    altPositiveButton: 
+    gravity: 10
     dead: 0.001
-    sensitivity: 1000
+    sensitivity: 10
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Cancel
+    m_Name: Restart
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: r
     altNegativeButton: 
-    altPositiveButton: joystick button 1
-    gravity: 1000
+    altPositiveButton: joystick button 6
+    gravity: 10
     dead: 0.001
-    sensitivity: 1000
+    sensitivity: 10
     snap: 0
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: RestartP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: return
+    altNegativeButton: 
+    altPositiveButton: joystick button 6
+    gravity: 10
+    dead: 0.001
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Horizontal
     descriptiveName: 
@@ -148,7 +180,55 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: HorizontalP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Horizontal
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 5
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: HorizontalP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 5
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Vertical
     descriptiveName: 
@@ -164,7 +244,55 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: VerticalP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.01
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Vertical
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.01
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 6
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: VerticalP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.01
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 6
+    joyNum: 1
   - serializedVersion: 3
     m_Name: HorizontalSpear
     descriptiveName: 
@@ -180,7 +308,55 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: HorizontalSpearP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: HorizontalSpear
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick button 2
+    positiveButton: joystick button 1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: HorizontalSpearP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick button 2
+    positiveButton: joystick button 1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalSpear
     descriptiveName: 
@@ -196,4 +372,52 @@ InputManager:
     invert: 1
     type: 2
     axis: 4
-    joyNum: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: VerticalSpearP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: VerticalSpear
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick button 0
+    positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: VerticalSpearP2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: joystick button 0
+    positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.1
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 1
+    joyNum: 2
