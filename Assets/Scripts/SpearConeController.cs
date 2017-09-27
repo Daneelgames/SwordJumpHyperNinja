@@ -63,13 +63,13 @@ public class SpearConeController : MonoBehaviour
             au.volume = Random.Range(0.1f, 0.25f);
             au.pitch = Random.Range(0.8f, 1.2f);
             au.Play();
-            Destroy(au,0.5f);
+            Destroy(au, 0.5f);
             AudioSource au2 = gameObject.AddComponent<AudioSource>();
             au2.clip = swordHitSfx;
             au2.volume = Random.Range(0.1f, 0.25f);
             au2.pitch = Random.Range(0.8f, 1.2f);
             au2.Play();
-            Destroy(au2,0.5f);
+            Destroy(au2, 0.5f);
 
             //swordSource.pitch = Random.Range(0.75f, 1.25f);
             //swordSource.Play();
@@ -80,22 +80,22 @@ public class SpearConeController : MonoBehaviour
     void Bounce(GameObject other)
     {
         //print("bounce");
-        if (other.layer == 8 || other.layer == 11 || other.layer == 10 || other.layer == 16|| other.layer == 15)
+        if (other.layer == 8 || other.layer == 11 || other.layer == 10 || other.layer == 16 || other.layer == 15)
         {
             bool canBounce = true;
 
-            if (other.gameObject.tag == "PlayerHealth"  && !pc.p2)
+            if (other.gameObject.tag == "PlayerHealth" && !pc.p2)
                 canBounce = false;
-            if (other.gameObject.tag == "P2Health"  && pc.p2)
+            if (other.gameObject.tag == "P2Health" && pc.p2)
                 canBounce = false;
-            if (other.gameObject.tag == "PlayerHealth"  && pc.p2)
+            if (other.gameObject.tag == "PlayerHealth" && pc.p2)
             {
                 if (!GameManager.instance.pc.dead)
                 {
                     KillPlayer();
                 }
             }
-            if  (other.gameObject.tag == "P2Health" && !pc.p2)
+            if (other.gameObject.tag == "P2Health" && !pc.p2)
             {
                 if (!GameManager.instance.pc2.dead)
                 {
@@ -110,15 +110,25 @@ public class SpearConeController : MonoBehaviour
                 Vector3 bouncePos = pc.spearController.spearTarget.transform.position;
                 pc.Bounce(bouncePos);
             }
-        
+
         }
     }
     void KillPlayer()
     {
-        GameManager.instance.RestartLevel(false);
+        bool canKillPlayer = true;
+        if (GameManager.instance.pc2 && GameManager.instance.pc2.dead)
+            canKillPlayer = false;
+
+        if (canKillPlayer)
+            GameManager.instance.RestartLevel(false, true);
     }
     void KillP2()
     {
-        GameManager.instance.RestartLevel(true);
+        bool canKillP2 = true;
+        if (GameManager.instance.pc.dead)
+            canKillP2 = false;
+
+        if (canKillP2)
+            GameManager.instance.RestartLevel(true, true);
     }
 }

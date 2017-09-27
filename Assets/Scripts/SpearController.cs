@@ -10,6 +10,8 @@ public class SpearController : MonoBehaviour
     public float turnSpeed = 4;
     public GameObject spearTarget;
     public Collider2D spearCone;
+    float hs = 0;
+    float vs = 0;
 
     void Start()
     {
@@ -20,26 +22,30 @@ public class SpearController : MonoBehaviour
     void Update()
     {
         GetInput();
-
     }
+
     void FixedUpdate()
     {
         ApplyForces();
         rb.MovePosition(pc.gameObject.transform.position);
     }
+
+    public void GetAiInput(Vector2 dir) //get ai input
+    {
+        hs = dir.x;
+        vs = dir.y;
+    }
     void GetInput()
     {
         // SPEAR TARGETING
-        
-        float hs;
-        float vs;
 
-        if (!pc.p2)
+
+        if (!pc.p2) // IF P1
         {
             hs = Input.GetAxis("HorizontalSpear");
             vs = Input.GetAxis("VerticalSpear");
         }
-        else
+        else if (!pc.ai) // IF P2
         {
             hs = Input.GetAxis("HorizontalSpearP2");
             vs = Input.GetAxis("VerticalSpearP2");

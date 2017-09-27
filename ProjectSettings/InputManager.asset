@@ -150,6 +150,38 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
+    m_Name: SlowMo
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 5
+    altNegativeButton: 
+    altPositiveButton: joystick button 4
+    gravity: 10
+    dead: 0.001
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: SlowMo
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left shift
+    altNegativeButton: 
+    altPositiveButton: c
+    gravity: 10
+    dead: 0.001
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
     m_Name: RestartP2
     descriptiveName: 
     descriptiveNegativeName: 
@@ -405,19 +437,3 @@ InputManager:
     type: 0
     axis: 1
     joyNum: 1
-  - serializedVersion: 3
-    m_Name: VerticalSpearP2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: joystick button 0
-    positiveButton: joystick button 3
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 10
-    dead: 0.1
-    sensitivity: 10
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 1
-    joyNum: 2

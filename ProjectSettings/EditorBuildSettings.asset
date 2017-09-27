@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/00_options.unity
     guid: 766f2fd6c2db0a1468d252aa6ae89d19
   - enabled: 1
-    path: Assets/Scenes/00_arena.unity
+    path: Assets/Scenes/00_arena_1.unity
+    guid: 861c5b17b655bd24ebe23403f9230b1a
+  - enabled: 1
+    path: Assets/Scenes/00_arena_2.unity
     guid: 96ab3e65ce73dc74690ed51feb264bb3
   - enabled: 1
     path: Assets/Scenes/01_learnJump.unity
@@ -32,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01_wolfsOnPoles.unity
     guid: d7201c81d5973c04e9bef382e683dfb8
+  - enabled: 1
+    path: Assets/Scenes/01_arena_2.unity
+    guid: c0a383acc9e7528428c145597c549d9e
   - enabled: 1
     path: Assets/Scenes/01_learnGrinder.unity
     guid: 3c82b6d4b57ee5443b610a558f1fa1ef

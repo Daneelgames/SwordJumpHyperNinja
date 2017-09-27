@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public bool p2 = false;
+    public PlayerAI ai;
     public Rigidbody2D rb;
     public float speed;
     public Animator anim;
@@ -34,10 +35,13 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem jumpParticles;
     public GameObject landParticles;
 
+    public float slowMoMeter = 3;
+    public bool slowMoActive = false;
+    public SlowMoMeterController slowMoMeterController;
 
     void Awake()
     {
-        if(!p2)
+        if (!p2)
         {
             GameManager.instance.SetPlayer(this);
 
@@ -52,6 +56,8 @@ public class PlayerController : MonoBehaviour
         healthCollider.gameObject.transform.SetParent(null);
 
         InvokeRepeating("Stepping", 0.15f, 0.15f);
+
+        Land();
     }
 
     void Stepping()
@@ -71,11 +77,21 @@ public class PlayerController : MonoBehaviour
         Instantiate(landParticles, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
         stepSource.pitch = Random.Range(0.75f, 1.25f);
         stepSource.PlayOneShot(landClip);
+
+        if (slowMoMeterController)
+            RechargeSlowMo();
+    }
+
+    void RechargeSlowMo()
+    {
+        slowMoMeter = 1;
+        slowMoMeterController.StartCoroutine("RechargeSlowMo");
+        ToggleSlowMo(false);
     }
 
     public void JumpSoundStop()
     {
-        print ("jump sound stop");
+        //print ("jump sound stop");
         jumpSource.Stop();
 
     }
@@ -84,7 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         Animate();
-
+        SlowMo();
         //set jump sfx pitch
         if (!grounded)
             jumpSource.pitch -= 0.1f * Time.deltaTime;
@@ -102,19 +118,78 @@ public class PlayerController : MonoBehaviour
     {
         if (!p2)
             hSpeed = Input.GetAxis("Horizontal");
-        else
+        else if (!ai)
             hSpeed = Input.GetAxis("HorizontalP2");
 
-		if (Input.GetButtonDown("Restart"))
+        if (Input.GetButtonDown("Restart"))
         {
-			if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
-                GameManager.instance.RestartLevel(false);
+            if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
+                GameManager.instance.RestartLevel(false, false);
         }
-		else if (Input.GetButtonDown("RestartP2"))
+        else if (!ai && Input.GetButtonDown("RestartP2"))
         {
-			if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
-                GameManager.instance.RestartLevel(true);
+            if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
+                GameManager.instance.RestartLevel(true, false);
         }
+
+        if (slowMoMeterController)
+        {
+            // slow mo
+            if (Input.GetButtonDown("SlowMo"))
+            {
+                //start slo mo
+                if (!slowMoActive && !GameManager.instance.levelClear && !grounded)
+
+                {
+                    ToggleSlowMo(true);
+                    slowMoMeterController.ToggleSlowMo(true);
+                }
+                // input if can't start slow mo
+            }
+            if (Input.GetButtonUp("SlowMo"))
+            {
+                if (slowMoActive && !GameManager.instance.levelClear)
+                {
+                    //close slo mo meter
+                    ToggleSlowMo(false);
+                    // input if can't start slow mo
+                }
+            }
+        }
+    }
+
+    public void ToggleSlowMo(bool active)
+    {
+        if (active)
+        {
+            slowMoActive = true;
+            Time.timeScale = 0.3f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            slowMoActive = false;
+        }
+    }
+
+    void SlowMo()
+    {
+        if (slowMoActive)
+        {
+            if (slowMoMeter > 0)
+            {
+                slowMoMeter -= Time.unscaledDeltaTime / 3;
+            }
+            else
+            {
+                ToggleSlowMo(false);
+            }
+        }
+    }
+
+    public void P2AIhSpeed(float _hspeed)
+    {
+        hSpeed = _hspeed;
     }
 
     public void SetBound(string side, bool inTrigger)
@@ -153,11 +228,26 @@ public class PlayerController : MonoBehaviour
             }
             else if (!grounded)
             {
-                if (!p2)
-                    rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f, rb.velocity.y);
-                    else
+                float p1Velocity = rb.velocity.x + Input.GetAxisRaw("Horizontal") / 8.5f;
+                if (slowMoActive)
+                    p1Velocity = rb.velocity.x + Input.GetAxisRaw("Horizontal") / 2;
+
+                if (!p2) // IF P1
+                    rb.velocity = new Vector2(p1Velocity, rb.velocity.y);
+                else if (!ai) // IF P2
                     rb.velocity = new Vector2(rb.velocity.x + Input.GetAxisRaw("HorizontalP2") / 8.5f, rb.velocity.y);
+                else // IF P2AI
+                {
+                    float hSpeedNew = 0;
+                    if (hSpeed > 0)
+                        hSpeedNew = 1;
+                    else if (hSpeed < 0)
+                        hSpeedNew = -1;
+
+                    rb.velocity = new Vector2(rb.velocity.x + hSpeedNew / 8.5f, rb.velocity.y);
+                }
             }
+
             var newVel = rb.velocity;
 
             if (newVel.y > 7)
@@ -250,6 +340,8 @@ public class PlayerController : MonoBehaviour
 
                 var jumpEmission = jumpParticles.emission;
                 jumpEmission.rateOverTime = 50;
+                if (slowMoMeterController)
+                    slowMoMeterController.ToggleSlowMo(true);
             }
             grounded = false;
         }
