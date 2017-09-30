@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/00_arena_2.unity
     guid: 96ab3e65ce73dc74690ed51feb264bb3
   - enabled: 1
+    path: Assets/Scenes/01_worldMap.unity
+    guid: cb8837e2a61eb9b4ebace300a80b5641
+  - enabled: 1
     path: Assets/Scenes/01_learnJump.unity
     guid: 437efded205507f4cb4a6999533f6e41
   - enabled: 1

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public bool p2 = false;
+    public bool gui = false;
     public PlayerAI ai;
     public Rigidbody2D rb;
     public float speed;
@@ -38,6 +39,10 @@ public class PlayerController : MonoBehaviour
     public float slowMoMeter = 3;
     public bool slowMoActive = false;
     public SlowMoMeterController slowMoMeterController;
+    public AudioSource slowMoInSource;
+    public AudioSource slowMoOutSource;
+
+    public bool onPlatform = false; // if on moving platform => enforce velocity.x
 
     void Awake()
     {
@@ -58,6 +63,7 @@ public class PlayerController : MonoBehaviour
         InvokeRepeating("Stepping", 0.15f, 0.15f);
 
         Land();
+        ResetSlowMoFx();
     }
 
     void Stepping()
@@ -121,7 +127,7 @@ public class PlayerController : MonoBehaviour
         else if (!ai)
             hSpeed = Input.GetAxis("HorizontalP2");
 
-        if (Input.GetButtonDown("Restart"))
+        if (Input.GetButtonDown("Restart") && !gui)
         {
             if (!dead && !GameManager.instance.levelClear && Time.timeSinceLevelLoad > 1f)
                 GameManager.instance.RestartLevel(false, false);
@@ -132,13 +138,13 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.RestartLevel(true, false);
         }
 
-        if (slowMoMeterController)
+        if (slowMoMeterController && !gui)
         {
             // slow mo
             if (Input.GetButtonDown("SlowMo"))
             {
                 //start slo mo
-                if (!slowMoActive && !GameManager.instance.levelClear && !grounded)
+                if (slowMoMeter > 0 && !slowMoActive && !GameManager.instance.levelClear && !grounded)
 
                 {
                     ToggleSlowMo(true);
@@ -163,13 +169,63 @@ public class PlayerController : MonoBehaviour
         if (active)
         {
             slowMoActive = true;
+            slowMoInSource.Play();
+            slowMoOutSource.Stop();
+            GameManager.instance.SetAudioPitch(true);
             Time.timeScale = 0.3f;
+            StartCoroutine("SlowMoPostFx", true);
         }
         else
         {
             Time.timeScale = 1;
+            if (slowMoActive)
+            {
+                GameManager.instance.SetAudioPitch(false);
+                slowMoOutSource.Play();
+                slowMoInSource.Stop();
+                StartCoroutine("SlowMoPostFx", false);
+            }
             slowMoActive = false;
         }
+    }
+
+    IEnumerator SlowMoPostFx(bool active)
+    {
+        var _bloom = GameManager.instance.postProcessing.profile.bloom.settings;
+        var _motionBlur = GameManager.instance.postProcessing.profile.motionBlur.settings;
+
+        if (active)
+        {
+            while (_bloom.bloom.intensity < 1.2f)
+            {
+                _bloom.bloom.intensity += Time.unscaledDeltaTime;
+                GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
+                _motionBlur.frameBlending += Time.unscaledDeltaTime;
+                GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
+                yield return null;
+            }
+        }
+        else
+        {
+            while (_bloom.bloom.intensity > 0.2f)
+            {
+                _bloom.bloom.intensity -= Time.unscaledDeltaTime;
+                GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
+                _motionBlur.frameBlending -= Time.unscaledDeltaTime;
+                GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
+                yield return null;
+            }
+        }
+    }
+
+    void ResetSlowMoFx()
+    {
+        var _bloom = GameManager.instance.postProcessing.profile.bloom.settings;
+        var _motionBlur = GameManager.instance.postProcessing.profile.motionBlur.settings;
+        _bloom.bloom.intensity = 0.2f;
+        GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
+        _motionBlur.frameBlending = 0;
+        GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
     }
 
     void SlowMo()
@@ -182,7 +238,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                ToggleSlowMo(false);
+                if (!GameManager.instance.levelClear)
+                    ToggleSlowMo(false);
             }
         }
     }
@@ -217,14 +274,19 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.localScale = new Vector3(lookDirection, 1, 1);
         }
     }
+
     void ApplyForces()
     {
         if (!dead)
         {
             if (grounded)
             {
+                float enforceVelocityX = 1;
+                if (onPlatform)
+                    enforceVelocityX = 2;
+
                 if (!attacking)
-                    rb.velocity = new Vector2(hSpeed * speed, rb.velocity.y);
+                    rb.velocity = new Vector2(hSpeed * enforceVelocityX * speed, rb.velocity.y);
             }
             else if (!grounded)
             {
@@ -269,6 +331,11 @@ public class PlayerController : MonoBehaviour
         }
         //else
         // rb.velocity = Vector2.zero;
+    }
+
+    public void ToggleOnMovingPlatform(bool _onPlatform)
+    {
+        onPlatform = _onPlatform;
     }
 
     void Animate()

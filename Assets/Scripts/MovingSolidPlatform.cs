@@ -9,6 +9,7 @@ public class MovingSolidPlatform : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 			other.gameObject.transform.SetParent(transform);
+			GameManager.instance.pc.ToggleOnMovingPlatform(true);
 		}
 	}
 
@@ -17,6 +18,7 @@ public class MovingSolidPlatform : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 			other.gameObject.transform.SetParent(null);
+			GameManager.instance.pc.ToggleOnMovingPlatform(false);
 		}
 	}
 }

@@ -62,12 +62,14 @@ public class SpearConeController : MonoBehaviour
             au.clip = swordWooshSfx;
             au.volume = Random.Range(0.1f, 0.25f);
             au.pitch = Random.Range(0.8f, 1.2f);
+            au.outputAudioMixerGroup = GameManager.instance.auMixer;
             au.Play();
             Destroy(au, 0.5f);
             AudioSource au2 = gameObject.AddComponent<AudioSource>();
             au2.clip = swordHitSfx;
             au2.volume = Random.Range(0.1f, 0.25f);
             au2.pitch = Random.Range(0.8f, 1.2f);
+            au2.outputAudioMixerGroup = GameManager.instance.auMixer;
             au2.Play();
             Destroy(au2, 0.5f);
 

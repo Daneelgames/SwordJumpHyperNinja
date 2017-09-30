@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (GameManager.instance.activeCam == null)
         {
-            GameManager.instance.SetActiveCamera(this);
+            anim = GameManager.instance.SetActiveCamera(this);
             //player = GameObject.FindWithTag("Player");
             DontDestroyOnLoad(gameObject);
         }

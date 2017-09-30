@@ -26,13 +26,16 @@ public class Destructible : MonoBehaviour
                 //au.pitch = Random.Range(0.75f, 1f);
                 //au.Play();
 
-                GameObject auObj = new GameObject();
-                AudioSource auNew = auObj.AddComponent<AudioSource>();
-                auNew.clip = au.clip;
-                auNew.pitch = Random.Range(0.5f, 1f);
-                auNew.Play();
-                Destroy(auObj, 1f);
+                if (au)
+                {
+                    GameObject auObj = new GameObject();
+                    AudioSource auNew = auObj.AddComponent<AudioSource>();
+                    auNew.clip = au.clip;
+                    auNew.pitch = Random.Range(0.5f, 1f);
+                    auNew.Play();
+                    Destroy(auObj, 1f);
 
+                }
                 if (slashParticles != null)
                 {
                     GameObject blood = Instantiate(slashParticles, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360))) as GameObject;

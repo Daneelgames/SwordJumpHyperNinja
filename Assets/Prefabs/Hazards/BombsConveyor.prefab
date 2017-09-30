@@ -5325,7 +5325,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5345,7 +5345,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5445,7 +5445,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5465,7 +5465,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5505,7 +5505,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5565,7 +5565,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -5625,7 +5625,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fc7c06bd8360d334c9cfe7fea0c63bb5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -6874,6 +6874,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114138562633796902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6966,6 +6967,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114313215924544548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6983,6 +6985,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114352941005499896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7011,6 +7014,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114360634841252300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7069,6 +7073,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114450638090856288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7127,6 +7132,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114497407781456550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7173,6 +7179,7 @@ MonoBehaviour:
   deathParticles: {fileID: 136784, guid: 8bf2eaa264a79244692bd47f06c1a30e, type: 2}
   slashParticles: {fileID: 0}
   bodyParts: []
+  au: {fileID: 0}
 --- !u!114 &114597505567137816
 MonoBehaviour:
   m_ObjectHideFlags: 1

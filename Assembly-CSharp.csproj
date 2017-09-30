@@ -54,7 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\P2AiEnemyArea.cs" />
+     <Compile Include="Assets\CameraResetManager.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -116,13 +116,14 @@
      <Compile Include="Assets\Scripts\MovementBoundController.cs" />
      <Compile Include="Assets\Scripts\MovingSolidPlatform.cs" />
      <Compile Include="Assets\Scripts\P2AIControlPointController.cs" />
+     <Compile Include="Assets\Scripts\P2AiEnemyArea.cs" />
      <Compile Include="Assets\Scripts\ParticlesUnscaledTime.cs" />
      <Compile Include="Assets\Scripts\PlayerAI.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SetBoolOnStart.cs" />
+     <Compile Include="Assets\Scripts\SlowMoMeterController.cs" />
      <Compile Include="Assets\Scripts\SpearConeController.cs" />
      <Compile Include="Assets\Scripts\SpearController.cs" />
-     <Compile Include="Assets\SlowMoMeterController.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

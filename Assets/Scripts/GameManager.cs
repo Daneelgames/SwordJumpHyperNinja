@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.PostProcessing;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +16,11 @@ public class GameManager : MonoBehaviour
     public List<GameObject> bodyParts = new List<GameObject>();
     public bool levelClear = false;
     public ArenaCanvasController acc;
+    public AudioMixerGroup auMixer;
+    public Camera renderCam;
+    public Animator camAnim;
+    public PostProcessingBehaviour postProcessing;
+    public CameraResetManager camReset;
 
     public void SetArenaCanvasController(ArenaCanvasController _acc)
     {
@@ -38,7 +45,6 @@ public class GameManager : MonoBehaviour
             FinishLevel("");
 
         if (Input.GetKeyDown(KeyCode.F1) && SceneManager.GetActiveScene().buildIndex != 0)
-
             PastLevel();
     }
 
@@ -81,13 +87,18 @@ public class GameManager : MonoBehaviour
             Destroy(acc.gameObject);
 
         Fade(false);
-
         levelClear = false;
+        SetAudioPitch(false);
+
+        // RETURN CAMERA TO GAMEMANAGER
+        renderCam.transform.SetParent(transform);
+        renderCam.transform.localPosition = Vector3.zero;
+        camReset.Reset();
 
         if (menu == "")
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         else if (menu == "Play")
-            SceneManager.LoadScene(3); // LOAD GAME HERE
+            SceneManager.LoadScene(4); // LOAD GAME HERE
         else if (menu == "Arena")
             SceneManager.LoadScene(2);
         else if (menu == "Options")
@@ -101,7 +112,15 @@ public class GameManager : MonoBehaviour
             Screen.fullScreen = !Screen.fullScreen;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        else // if player choses level from world map
+        {
+            ChooseLevel(menu);
+        }
+    }
 
+    void ChooseLevel(string level)
+    {
+        SceneManager.LoadScene(level);
     }
 
     public void PastLevel()
@@ -122,6 +141,13 @@ public class GameManager : MonoBehaviour
 
         if (acc)
             Destroy(acc.gameObject);
+
+        SetAudioPitch(false);
+
+        // RETURN CAMERA TO GAMEMANAGER
+        renderCam.transform.SetParent(transform);
+        renderCam.transform.localPosition = Vector3.zero;
+        camReset.Reset();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
@@ -190,6 +216,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.5f);
             Fade(false);
             levelClear = false;
+            SetAudioPitch(false);
+            pc.ToggleSlowMo(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -202,9 +230,19 @@ public class GameManager : MonoBehaviour
     {
         pc2 = _pc;
     }
-    public void SetActiveCamera(CameraMovement cam)
+    public Animator SetActiveCamera(CameraMovement cam)
     {
         activeCam = cam;
+        renderCam.transform.SetParent(activeCam.transform);
+        renderCam.transform.localPosition = Vector3.zero;
+        return camAnim;
     }
 
+    public void SetAudioPitch(bool slowMo)
+    {
+        if (slowMo)
+            auMixer.audioMixer.SetFloat("gamePitch", 0.25f);
+        else
+            auMixer.audioMixer.SetFloat("gamePitch", 1);
+    }
 }
