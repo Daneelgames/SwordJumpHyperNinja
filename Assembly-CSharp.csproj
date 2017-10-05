@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraResetManager.cs" />
+     <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />

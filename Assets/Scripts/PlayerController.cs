@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour
             slowMoInSource.Play();
             slowMoOutSource.Stop();
             GameManager.instance.SetAudioPitch(true);
+            //GameManager.instance.musicController.SlowMo(true);
             Time.timeScale = 0.3f;
             StartCoroutine("SlowMoPostFx", true);
         }
@@ -180,6 +181,7 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1;
             if (slowMoActive)
             {
+                //GameManager.instance.musicController.SlowMo(false);
                 GameManager.instance.SetAudioPitch(false);
                 slowMoOutSource.Play();
                 slowMoInSource.Stop();

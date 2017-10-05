@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Animator camAnim;
     public PostProcessingBehaviour postProcessing;
     public CameraResetManager camReset;
+    public MusicController musicController;
 
     public void SetArenaCanvasController(ArenaCanvasController _acc)
     {
