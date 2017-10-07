@@ -66,6 +66,11 @@ public class SpearController : MonoBehaviour
         spearTarget.transform.position = newPos;
         // NEED TO MOVE TARGET AROUND CIRCLE
     }
+
+    public void HideTarget()
+    {
+        spearTarget.gameObject.SetActive(false);
+    }
     void ApplyForces()
     {
         Vector2 directionSpearTarget = spearTarget.transform.position - transform.position;

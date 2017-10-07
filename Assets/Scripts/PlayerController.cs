@@ -80,12 +80,15 @@ public class PlayerController : MonoBehaviour
         var jumpEmission = jumpParticles.emission;
         jumpEmission.rateOverTime = 0;
 
-        Instantiate(landParticles, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
-        stepSource.pitch = Random.Range(0.75f, 1.25f);
-        stepSource.PlayOneShot(landClip);
+        if (!dead)
+        {
+            Instantiate(landParticles, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z), Quaternion.identity);
+            stepSource.pitch = Random.Range(0.75f, 1.25f);
+            stepSource.PlayOneShot(landClip);
 
-        if (slowMoMeterController)
-            RechargeSlowMo();
+            if (slowMoMeterController)
+                RechargeSlowMo();
+        }
     }
 
     void RechargeSlowMo()
@@ -386,7 +389,9 @@ public class PlayerController : MonoBehaviour
             GameObject part = Instantiate(c, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
         }
         anim.gameObject.SetActive(false);
+        spearController.HideTarget();
         spearController.gameObject.SetActive(false);
+        slowMoMeterController.gameObject.SetActive(false);
     }
 
     void CheckGround()
