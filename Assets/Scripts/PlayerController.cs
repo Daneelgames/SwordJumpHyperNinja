@@ -199,15 +199,29 @@ public class PlayerController : MonoBehaviour
         var _bloom = GameManager.instance.postProcessing.profile.bloom.settings;
         var _motionBlur = GameManager.instance.postProcessing.profile.motionBlur.settings;
 
+        print("postFx is " + active);
+
         if (active)
         {
-            while (_bloom.bloom.intensity < 1.2f)
+            while (_bloom.bloom.intensity <= 1.2f)
             {
                 _bloom.bloom.intensity += Time.unscaledDeltaTime;
                 GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
                 _motionBlur.frameBlending += Time.unscaledDeltaTime;
                 GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
+                if (!slowMoActive)
+                {
+                    StartCoroutine("SlowMoPostFx", false);
+                    break;
+                }
                 yield return null;
+            }
+            if (slowMoActive)
+            {
+                _bloom.bloom.intensity = 1.2f;
+                GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
+                _motionBlur.frameBlending = 1;
+                GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
             }
         }
         else
@@ -218,7 +232,19 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
                 _motionBlur.frameBlending -= Time.unscaledDeltaTime;
                 GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
+                if (slowMoActive)
+                {
+                    StartCoroutine("SlowMoPostFx", true);
+                    break;
+                }
                 yield return null;
+            }
+            if (!slowMoActive)
+            {
+                _bloom.bloom.intensity = 0.2f;
+                GameManager.instance.postProcessing.profile.bloom.settings = _bloom;
+                _motionBlur.frameBlending = 0;
+                GameManager.instance.postProcessing.profile.motionBlur.settings = _motionBlur;
             }
         }
     }
@@ -390,8 +416,11 @@ public class PlayerController : MonoBehaviour
         }
         anim.gameObject.SetActive(false);
         spearController.HideTarget();
-        spearController.gameObject.SetActive(false);
-        slowMoMeterController.gameObject.SetActive(false);
+
+        if (spearController)
+            spearController.gameObject.SetActive(false);
+        if (slowMoMeterController)
+            slowMoMeterController.gameObject.SetActive(false);
     }
 
     void CheckGround()

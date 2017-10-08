@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F2))
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1) && SceneManager.GetActiveScene().buildIndex != 0)
             PastLevel();
     }
+    */
 
     public IEnumerator FinishLevel(string menu)
     {

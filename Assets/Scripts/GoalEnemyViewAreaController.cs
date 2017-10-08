@@ -29,7 +29,7 @@ public class GoalEnemyViewAreaController : MonoBehaviour
         Debug.DrawLine(transform.position, GameManager.instance.pc.transform.position, Color.green);
         if (hit)
         {
-            print(hit.collider.gameObject.name);
+//            print(hit.collider.gameObject.name);
             if (hit.collider.gameObject.tag == "Player")
             {
                 goal.Alarm();

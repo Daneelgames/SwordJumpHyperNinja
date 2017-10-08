@@ -32,6 +32,7 @@ public class Destructible : MonoBehaviour
                     AudioSource auNew = auObj.AddComponent<AudioSource>();
                     auNew.clip = au.clip;
                     auNew.pitch = Random.Range(0.5f, 1f);
+                    auNew.volume = 0.5f;
                     auNew.Play();
                     Destroy(auObj, 1f);
 
