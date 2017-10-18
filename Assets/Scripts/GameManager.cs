@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public PostProcessingBehaviour postProcessing;
     public CameraResetManager camReset;
     public MusicController musicController;
+    
+    public GameObject goal;
 
     public void SetArenaCanvasController(ArenaCanvasController _acc)
     {
@@ -247,5 +249,14 @@ public class GameManager : MonoBehaviour
             auMixer.audioMixer.SetFloat("gamePitch", 0.25f);
         else
             auMixer.audioMixer.SetFloat("gamePitch", 1);
+    }
+
+    public void TogglePlayer(bool active)
+    {
+        pc.gameObject.SetActive(active);
+    }
+    public void ToggleGoal(bool active)
+    {
+        goal.gameObject.SetActive(active);
     }
 }

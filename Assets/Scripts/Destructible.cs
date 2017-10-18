@@ -33,6 +33,7 @@ public class Destructible : MonoBehaviour
                     auNew.clip = au.clip;
                     auNew.pitch = Random.Range(0.5f, 1f);
                     auNew.volume = 0.5f;
+                    auNew.outputAudioMixerGroup = GameManager.instance.auMixer;
                     auNew.Play();
                     Destroy(auObj, 1f);
 

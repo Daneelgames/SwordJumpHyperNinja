@@ -15,6 +15,9 @@ public class GoalController : MonoBehaviour
     {
         direction = Mathf.RoundToInt(anim.gameObject.transform.parent.localScale.x);
         Time.timeScale = 1;
+
+        if (menu == "")
+        GameManager.instance.goal = gameObject;
     }
 
     void OnTriggerEnter2D(Collider2D other)

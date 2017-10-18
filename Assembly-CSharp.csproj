@@ -54,7 +54,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AnimatorTriggerReciever.cs" />
      <Compile Include="Assets\CameraResetManager.cs" />
+     <Compile Include="Assets\MotherKissController.cs" />
      <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -125,6 +127,7 @@
      <Compile Include="Assets\Scripts\SlowMoMeterController.cs" />
      <Compile Include="Assets\Scripts\SpearConeController.cs" />
      <Compile Include="Assets\Scripts\SpearController.cs" />
+     <Compile Include="Assets\TriggerColliderEventController.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
