@@ -54,10 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AnimatorTriggerReciever.cs" />
-     <Compile Include="Assets\CameraResetManager.cs" />
-     <Compile Include="Assets\MotherKissController.cs" />
-     <Compile Include="Assets\MusicController.cs" />
+     <Compile Include="Assets\BossMusicController.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -104,10 +101,12 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\Scripts\AnimatorRandomTime.cs" />
+     <Compile Include="Assets\Scripts\AnimatorTriggerReciever.cs" />
      <Compile Include="Assets\Scripts\ArenaCanvasController.cs" />
      <Compile Include="Assets\Scripts\BloodHolderController.cs" />
      <Compile Include="Assets\Scripts\BodyPartController.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\CameraResetManager.cs" />
      <Compile Include="Assets\Scripts\DestroyOnTime.cs" />
      <Compile Include="Assets\Scripts\Destructible.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -116,8 +115,10 @@
      <Compile Include="Assets\Scripts\HazardController.cs" />
      <Compile Include="Assets\Scripts\LevelParameters.cs" />
      <Compile Include="Assets\Scripts\LinearBoundsMovement.cs" />
+     <Compile Include="Assets\Scripts\MotherKissController.cs" />
      <Compile Include="Assets\Scripts\MovementBoundController.cs" />
      <Compile Include="Assets\Scripts\MovingSolidPlatform.cs" />
+     <Compile Include="Assets\Scripts\MusicController.cs" />
      <Compile Include="Assets\Scripts\P2AIControlPointController.cs" />
      <Compile Include="Assets\Scripts\P2AiEnemyArea.cs" />
      <Compile Include="Assets\Scripts\ParticlesUnscaledTime.cs" />
@@ -127,7 +128,7 @@
      <Compile Include="Assets\Scripts\SlowMoMeterController.cs" />
      <Compile Include="Assets\Scripts\SpearConeController.cs" />
      <Compile Include="Assets\Scripts\SpearController.cs" />
-     <Compile Include="Assets\TriggerColliderEventController.cs" />
+     <Compile Include="Assets\Scripts\TriggerColliderEventController.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />

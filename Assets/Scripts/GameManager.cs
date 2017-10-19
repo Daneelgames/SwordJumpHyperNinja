@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public PostProcessingBehaviour postProcessing;
     public CameraResetManager camReset;
     public MusicController musicController;
-    
+
     public GameObject goal;
 
     public void SetArenaCanvasController(ArenaCanvasController _acc)
@@ -117,10 +117,11 @@ public class GameManager : MonoBehaviour
             Screen.fullScreen = !Screen.fullScreen;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        /* 
         else // if player choses level from world map
         {
             ChooseLevel(menu);
-        }
+        }*/
     }
 
     void ChooseLevel(string level)
